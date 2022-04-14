@@ -16,6 +16,9 @@ return require('packer').startup(function(use)
 
   -- use 'morhetz/gruvbox'
   use 'tomasiser/vim-code-dark'
+  use { 'projekt0n/github-nvim-theme',
+    config = "require('plugins.github-theme')"
+  }
   -- use 'bdesham/biogoo'
   -- use 'j201/stainless'
   -- use 'jonathanfilip/vim-lucius'
@@ -29,13 +32,13 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   use 'tpope/vim-sensible'
 
-  use {'junegunn/fzf', run = 'fzf#install()'}
+  use { 'junegunn/fzf', run = 'fzf#install()' }
   use 'junegunn/fzf.vim'
 
   use 'kyazdani42/nvim-web-devicons'
-  use {'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-      config = "require('plugins.lualine')"}
+  use { 'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = "require('plugins.lualine')" }
 
   use {
     'kyazdani42/nvim-tree.lua',
@@ -49,18 +52,18 @@ return require('packer').startup(function(use)
     config = function()
       require("plugins.telescope")
     end,
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
   -- LSP Cmp
-  use {'hrsh7th/cmp-nvim-lsp'}
+  use { 'hrsh7th/cmp-nvim-lsp' }
 
-  use {'L3MON4D3/LuaSnip'}
-  use {'hrsh7th/cmp-nvim-lua'}
-  use {'hrsh7th/cmp-buffer'}
-  use {'hrsh7th/cmp-path'}
-  use {'saadparwaiz1/cmp_luasnip'}
-  use {'hrsh7th/nvim-cmp', config = "require('plugins.cmp')"}
+  use { 'L3MON4D3/LuaSnip' }
+  use { 'hrsh7th/cmp-nvim-lua' }
+  use { 'hrsh7th/cmp-buffer' }
+  use { 'hrsh7th/cmp-path' }
+  use { 'saadparwaiz1/cmp_luasnip' }
+  use { 'hrsh7th/nvim-cmp', config = "require('plugins.cmp')" }
 
   -- LSP Base
   use {
@@ -74,11 +77,11 @@ return require('packer').startup(function(use)
     after = "nvim-lspconfig",
     requires = { "nvim-lua/plenary.nvim" },
     config = function()
-       require("plugins.null-ls").setup()
+      require("plugins.null-ls").setup()
     end,
   }
 
-  use {'nvim-treesitter/nvim-treesitter',
-      config = "require('plugins.treesitter')",
-      run = ':TSUpdate'}
+  use { 'nvim-treesitter/nvim-treesitter',
+    config = "require('plugins.treesitter')",
+    run = ':TSUpdate' }
 end)

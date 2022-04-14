@@ -1,7 +1,7 @@
 local present, nvimtree = pcall(require, "nvim-tree")
 
 if not present then
-   return
+  return
 end
 
 nvimtree.setup {
@@ -23,17 +23,17 @@ nvimtree.setup {
     ignore = false,
   },
   renderer = {
-   indent_markers = {
-     enable = false,
-   },
+    indent_markers = {
+      enable = false,
+    },
   },
   actions = {
     open_file = {
       quit_on_open = 0,
       window_picker = {
         exclude = {
-         filetype = { "notify", "packer", "qf" },
-         buftype = { "terminal" },
+          filetype = { "notify", "packer", "qf" },
+          buftype = { "terminal" },
         },
       },
     },

@@ -2,8 +2,8 @@ local treesitter = require("nvim-treesitter.configs")
 
 treesitter.setup {
   ensure_installed = {}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  sync_install = false,            -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "haskell" },  -- list of parsers to ignore installing
+  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+  ignore_install = { "haskell" }, -- list of parsers to ignore installing
   highlight = {
     enable = true,
     -- disable = { "c", "rust" },  -- list of language that will be disabled

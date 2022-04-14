@@ -1,5 +1,5 @@
 local cmp = require("cmp")
-local luasnip = require("luasnip")
+-- local luasnip = require("luasnip")
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -17,9 +17,9 @@ cmp.setup {
       vim_item.kind = string.format("%s", vim_item.kind)
 
       vim_item.menu = ({
-         nvim_lsp = "[LSP]",
-         nvim_lua = "[Lua]",
-         buffer = "[BUF]",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[Lua]",
+        buffer = "[BUF]",
       })[entry.source.name]
 
       return vim_item
