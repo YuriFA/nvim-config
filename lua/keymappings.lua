@@ -27,7 +27,7 @@ keymap("n", "<C-h>", ":wincmd h<CR>", { noremap = true, silent = true})
 keymap("n", "<C-l>", ":wincmd l<CR>", { noremap = true, silent = true})
 
 keymap("n", "<leader>fa", ":Rg<CR>", { noremap = true, silent = true})
-keymap("n", "<leader>ff", ":Ag<CR>", { noremap = true, silent = true})
+-- keymap("n", "<leader>ff", ":Ag<CR>", { noremap = true, silent = true})
 keymap("n", "<leader>fc", ":Commits<CR>", { noremap = true, silent = true})
 
 -- NVIM TREE
@@ -48,6 +48,6 @@ keymap("n", "[g", "<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'round
 keymap("n", "]g", "<cmd>lua vim.diagnostic.goto_next({ float = { border = 'rounded' }})<CR>", { noremap = true, silent = true })
 
 -- telescope
-keymap("n", "<leader>ff", ":Telescope find_files <CR>", { noremap = true, silent = true })
+keymap("n", "<leader>ff", ":Telescope find_files hidden=true<CR>", { noremap = true, silent = true })
 keymap("n", "<leader>fw", ":Telescope live_grep <CR>", { noremap = true, silent = true })
 

@@ -24,9 +24,9 @@ treesitter.setup {
     enable = true
   },
 
-  rainbow = {
-    enable = true
-  },
+  -- rainbow = {
+  --   enable = true
+  -- },
 
   context_commentstring = {
     enable = true,

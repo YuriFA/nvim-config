@@ -9,7 +9,10 @@ local sources = {
     filetypes = { "html", "json", "markdown", "scss", "css", "javascript", "javascriptreact", "typescript", "typescriptreact" },
     prefer_local = "node_modules/.bin",
    },
-   null_ls.builtins.diagnostics.eslint_d.with {
+   -- null_ls.builtins.diagnostics.eslint_d.with {
+   --   prefer_local = "node_modules/.bin",
+   -- },
+   null_ls.builtins.diagnostics.eslint.with {
      prefer_local = "node_modules/.bin",
    },
 }

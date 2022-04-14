@@ -60,3 +60,49 @@ end
 for k, v in pairs(globals) do
   vim.g[k] = v
 end
+
+
+local g = vim.g
+
+-- Emmet
+g.emmet_debug=1
+g.user_emmet_mode='a'
+g.user_emmet_leader_key=','
+
+-- nvim tree
+g.nvim_tree_add_trailing = 0 -- append a trailing slash to folder names
+g.nvim_tree_git_hl = git_status
+g.nvim_tree_highlight_opened_files = 0
+g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }
+
+g.nvim_tree_show_icons = {
+   folders = 1,
+   files = 0,
+   folder_arrows = 1,
+   git = git_status,
+}
+
+g.nvim_tree_icons = {
+   default = "",
+   symlink = "",
+   git = {
+      deleted = "",
+      ignored = "",
+      renamed = "",
+      staged = "",
+      unmerged = "",
+      unstaged = "",
+      untracked = "",
+   },
+   folder = {
+      arrow_closed = "▸",
+      arrow_open = "▾",
+      default = "",
+      empty = "",
+      empty_open = "",
+      open = "",
+      symlink = "",
+      symlink_open = "",
+   },
+}
+
