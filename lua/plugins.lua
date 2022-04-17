@@ -39,6 +39,11 @@ return require('packer').startup(function(use)
   use { 'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     config = "require('plugins.lualine')" }
+  use { 'akinsho/bufferline.nvim',
+    tag = "*",
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = "require('plugins.bufferline')" }
+
 
   use {
     'kyazdani42/nvim-tree.lua',
@@ -49,10 +54,7 @@ return require('packer').startup(function(use)
   use {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
-    config = function()
-      require("plugins.telescope")
-    end,
-    requires = { { 'nvim-lua/plenary.nvim' } }
+    requires = { { 'nvim-lua/plenary.nvim' }, { 'plugins.telescope' } }
   }
 
   -- LSP Cmp
