@@ -16,9 +16,9 @@ return require('packer').startup(function(use)
 
   -- use 'morhetz/gruvbox'
   use 'tomasiser/vim-code-dark'
-  use { 'projekt0n/github-nvim-theme',
-    config = "require('plugins.github-theme')"
-  }
+  -- use { 'projekt0n/github-nvim-theme',
+  --   config = "require('plugins.github-theme')"
+  -- }
   -- use 'bdesham/biogoo'
   -- use 'j201/stainless'
   -- use 'jonathanfilip/vim-lucius'
@@ -34,6 +34,9 @@ return require('packer').startup(function(use)
 
   use { 'junegunn/fzf', run = 'fzf#install()' }
   use 'junegunn/fzf.vim'
+
+  use { 'norcalli/nvim-colorizer.lua',
+    config = "require('plugins.colorizer')" }
 
   use 'kyazdani42/nvim-web-devicons'
   use { 'nvim-lualine/lualine.nvim',
@@ -54,7 +57,8 @@ return require('packer').startup(function(use)
   use {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
-    requires = { { 'nvim-lua/plenary.nvim' }, { 'plugins.telescope' } }
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = "require('plugins.telescope')",
   }
 
   -- LSP Cmp

@@ -16,9 +16,9 @@ lspconfig.tsserver.setup {
   end
 }
 
-lspconfig.eslint.setup {
-  capabilities = capabilities,
-}
+-- lspconfig.eslint.setup {
+--   capabilities = capabilities,
+-- }
 
 -- css, html
 for _, server in pairs({ "html", "cssls" }) do
@@ -38,7 +38,7 @@ lspconfig.jsonls.setup {
 -- table.insert(runtime_path, "lua/?.lua")
 -- table.insert(runtime_path, "lua/?/init.lua")
 
-require 'lspconfig'.sumneko_lua.setup {
+lspconfig.sumneko_lua.setup {
   settings = {
     Lua = {
       -- runtime = {

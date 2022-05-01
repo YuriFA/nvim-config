@@ -120,12 +120,6 @@ _G.packer_plugins = {
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
-  ["github-nvim-theme"] = {
-    config = { "require('plugins.github-theme')" },
-    loaded = true,
-    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
-    url = "https://github.com/projekt0n/github-nvim-theme"
-  },
   ["lualine.nvim"] = {
     config = { "require('plugins.lualine')" },
     loaded = true,
@@ -145,6 +139,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-colorizer.lua"] = {
+    config = { "require('plugins.colorizer')" },
+    loaded = true,
+    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-lspconfig"] = {
     after = { "null-ls.nvim" },
@@ -178,13 +178,9 @@ _G.packer_plugins = {
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["plugins.telescope"] = {
-    loaded = true,
-    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/plugins.telescope",
-    url = "https://github.com/plugins.telescope"
-  },
   ["telescope.nvim"] = {
     commands = { "Telescope" },
+    config = { "require('plugins.telescope')" },
     loaded = false,
     needs_bufread = true,
     only_cond = false,
@@ -214,22 +210,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require('plugins.lsp')
-time([[Config for nvim-lspconfig]], false)
--- Config for: github-nvim-theme
-time([[Config for github-nvim-theme]], true)
-require('plugins.github-theme')
-time([[Config for github-nvim-theme]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require('plugins.treesitter')
-time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+require('plugins.colorizer')
+time([[Config for nvim-colorizer.lua]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 require('plugins.nvimtree')
 time([[Config for nvim-tree.lua]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require('plugins.lsp')
+time([[Config for nvim-lspconfig]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 require('plugins.lualine')
@@ -242,6 +234,10 @@ time([[Config for nvim-cmp]], false)
 time([[Config for bufferline.nvim]], true)
 require('plugins.bufferline')
 time([[Config for bufferline.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require('plugins.treesitter')
+time([[Config for nvim-treesitter]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd null-ls.nvim ]]
