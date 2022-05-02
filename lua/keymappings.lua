@@ -3,11 +3,8 @@ local keymap = vim.api.nvim_set_keymap
 keymap("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
 
 -- BUFFERS
--- keymap("n", "<Tab>", ":bn<CR>", { noremap = true, silent = true })
--- keymap("n", "<S-Tab>", ":bp<CR>", { noremap = true, silent = true })
 keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
--- keymap("n", "<S-q>", ":BufferClose<CR>", { noremap = true, silent = true })
 keymap("n", "<leader>b", ":Buffers<CR>", { noremap = true, silent = true })
 keymap("n", "<leader>q", ":bd<CR>", { noremap = true, silent = true })
 -- keymap("n", "<Space>1", ":BufferGoto 1<CR>", { silent = true })
@@ -26,7 +23,7 @@ keymap("n", "<C-j>", ":wincmd j<CR>", { noremap = true, silent = true })
 keymap("n", "<C-h>", ":wincmd h<CR>", { noremap = true, silent = true })
 keymap("n", "<C-l>", ":wincmd l<CR>", { noremap = true, silent = true })
 
-keymap("n", "<leader>fa", ":Rg<CR>", { noremap = true, silent = true })
+-- keymap("n", "<leader>fa", ":Rg<CR>", { noremap = true, silent = true })
 -- keymap("n", "<leader>ff", ":Ag<CR>", { noremap = true, silent = true})
 keymap("n", "<leader>fc", ":Commits<CR>", { noremap = true, silent = true })
 
@@ -47,6 +44,19 @@ keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = 
 keymap("n", "[g", "<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'rounded' }})<CR>", { noremap = true, silent = true })
 keymap("n", "]g", "<cmd>lua vim.diagnostic.goto_next({ float = { border = 'rounded' }})<CR>", { noremap = true, silent = true })
 
--- telescope
+-- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files hidden=true<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>fa", "<CMD>lua require('plugins.telescope.pickers.multi-rg')()<CR>", {})
 keymap("n", "<leader>fw", ":Telescope live_grep <CR>", { noremap = true, silent = true })
+keymap("n", "<C-p>", "<CMD>lua require('plugins.telescope').project_files()<CR>", {})
+
+-- Remove highlights
+keymap("n", "<CR>", ":noh<CR><CR>", { silent = true })
+
+-- Find word/file across project
+keymap("n", "<Leader>pf", "<CMD>lua require('plugins.telescope').project_files({ default_text = vim.fn.expand('<cword>'), initial_mode = 'normal' })<CR>", {})
+keymap("n", "<Leader>pw", "<CMD>lua require('telescope.builtin').grep_string({ initial_mode = 'normal' })<CR>", {})
+
+-- Git
+keymap("n", "<Leader>gla", "<CMD>lua require('plugins.telescope').my_git_commits()<CR>", {})
+keymap("n", "<Leader>glc", "<CMD>lua require('plugins.telescope').my_git_bcommits()<CR>", { silent = true })

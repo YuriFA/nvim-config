@@ -11,7 +11,6 @@ nvimtree.setup {
   disable_netrw = true,
   hijack_netrw = true,
   ignore_ft_on_setup = { "dashboard" },
-  auto_close = false,
   open_on_tab = false,
   hijack_cursor = true,
   update_cwd = true,
@@ -29,7 +28,7 @@ nvimtree.setup {
   },
   actions = {
     open_file = {
-      quit_on_open = 0,
+      quit_on_open = false,
       window_picker = {
         exclude = {
           filetype = { "notify", "packer", "qf" },
