@@ -73,7 +73,9 @@ return require('packer').startup(function(use)
 
   -- LSP Base
   use {
-    'neovim/nvim-lspconfig',
+    -- 'neovim/nvim-lspconfig',
+    'williamboman/nvim-lspconfig',
+    branch = 'feat/eslint-yarn2-pnp',
     requires = { 'hrsh7th/cmp-nvim-lsp', opt = true },
     config = "require('plugins.lsp')"
   }

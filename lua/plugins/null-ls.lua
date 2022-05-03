@@ -16,15 +16,15 @@ local sources = {
     end,
   },
   -- null_ls.builtins.diagnostics.eslint_d.with {
-  null_ls.builtins.diagnostics.eslint.with {
-    -- prefer_local = "node_modules/.bin",
-    timeout = 30000,
-    dynamic_command = function(params)
-      return command_resolver.from_yarn_pnp(params)
-          or command_resolver.from_node_modules(params)
-          or vim.fn.executable(params.command) == 1 and params.command
-    end,
-  },
+  -- null_ls.builtins.diagnostics.eslint.with {
+  --   -- prefer_local = "node_modules/.bin",
+  --   timeout = 30000,
+  --   dynamic_command = function(params)
+  --     return command_resolver.from_yarn_pnp(params)
+  --         or command_resolver.from_node_modules(params)
+  --         or vim.fn.executable(params.command) == 1 and params.command
+  --   end,
+  -- },
 }
 
 local M = {}

@@ -16,9 +16,12 @@ lspconfig.tsserver.setup {
   end
 }
 
--- lspconfig.eslint.setup {
---   capabilities = capabilities,
--- }
+lspconfig.eslint.setup {
+  capabilities = capabilities,
+  on_attach = function(client)
+    client.resolved_capabilities.document_formatting = true
+  end
+}
 
 -- css, html
 for _, server in pairs({ "html", "cssls" }) do
