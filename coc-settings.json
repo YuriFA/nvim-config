@@ -1,0 +1,5 @@
+{
+  "Lua.telemetry.enable": false,
+  "typescript.format.enabled": false,
+  "eslint.format.enable": true,
+}

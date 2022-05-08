@@ -16,6 +16,10 @@ return require('packer').startup(function(use)
 
   -- use 'morhetz/gruvbox'
   use 'tomasiser/vim-code-dark'
+  -- use { "catppuccin/nvim", as = "catppuccin" }
+  use 'yunlingz/ci_dark'
+  use 'rakr/vim-one'
+  use "rebelot/kanagawa.nvim"
   -- use { 'projekt0n/github-nvim-theme',
   --   config = "require('plugins.github-theme')"
   -- }
@@ -37,6 +41,7 @@ return require('packer').startup(function(use)
 
   use { 'norcalli/nvim-colorizer.lua',
     config = "require('plugins.colorizer')" }
+  use 'amadeus/vim-convert-color-to'
 
   use 'kyazdani42/nvim-web-devicons'
   use { 'nvim-lualine/lualine.nvim',
@@ -62,34 +67,36 @@ return require('packer').startup(function(use)
   }
 
   -- LSP Cmp
-  use { 'hrsh7th/cmp-nvim-lsp' }
+  -- use { 'hrsh7th/cmp-nvim-lsp' }
 
-  use { 'L3MON4D3/LuaSnip' }
-  use { 'hrsh7th/cmp-nvim-lua' }
-  use { 'hrsh7th/cmp-buffer' }
-  use { 'hrsh7th/cmp-path' }
-  use { 'saadparwaiz1/cmp_luasnip' }
-  use { 'hrsh7th/nvim-cmp', config = "require('plugins.cmp')" }
+  -- use { 'L3MON4D3/LuaSnip' }
+  -- use { 'hrsh7th/cmp-nvim-lua' }
+  -- use { 'hrsh7th/cmp-buffer' }
+  -- use { 'hrsh7th/cmp-path' }
+  -- use { 'saadparwaiz1/cmp_luasnip' }
+  -- use { 'hrsh7th/nvim-cmp', config = "require('plugins.cmp')" }
 
-  -- LSP Base
-  use {
-    -- 'neovim/nvim-lspconfig',
-    'williamboman/nvim-lspconfig',
-    branch = 'feat/eslint-yarn2-pnp',
-    requires = { 'hrsh7th/cmp-nvim-lsp', opt = true },
-    config = "require('plugins.lsp')"
-  }
+  -- -- LSP Base
+  -- use {
+  --   -- 'neovim/nvim-lspconfig',
+  --   'williamboman/nvim-lspconfig',
+  --   branch = 'feat/eslint-yarn2-pnp',
+  --   requires = { 'hrsh7th/cmp-nvim-lsp', opt = true },
+  --   config = "require('plugins.lsp')"
+  -- }
 
-  use {
-    'jose-elias-alvarez/null-ls.nvim',
-    after = "nvim-lspconfig",
-    requires = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("plugins.null-ls").setup()
-    end,
-  }
+  -- use {
+  --   'jose-elias-alvarez/null-ls.nvim',
+  --   after = "nvim-lspconfig",
+  --   requires = { "nvim-lua/plenary.nvim" },
+  --   config = function()
+  --     require("plugins.null-ls").setup()
+  --   end,
+  -- }
 
   use { 'nvim-treesitter/nvim-treesitter',
     config = "require('plugins.treesitter')",
     run = ':TSUpdate' }
+
+  use { 'neoclide/coc.nvim', branch = 'release' }
 end)

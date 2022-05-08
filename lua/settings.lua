@@ -26,7 +26,7 @@ local options = {
   termguicolors  = true, --- Correct terminal colors
   timeoutlen     = 300, --- Faster completion
   undofile       = true, --- Sets undo to file
-  updatetime     = 100, --- Faster completion
+  updatetime     = 300, --- Faster completion
   viminfo        = "'1000", --- Increase the size of file history
   wildignore     = "*node_modules/**", --- Don't search inside Node.js modules (works for gutentag)
   wrap           = true, --- Display long lines as just one line
@@ -51,7 +51,7 @@ local globals = {
 -- vim.opt.formatoptions:remove('c');
 -- vim.opt.formatoptions:remove('r');
 -- vim.opt.formatoptions:remove('o');
-vim.cmd'colorscheme codedark'
+-- vim.cmd 'colorscheme codedark'
 
 for k, v in pairs(options) do
   vim.opt[k] = v
@@ -71,7 +71,7 @@ g.user_emmet_leader_key = ','
 
 -- nvim tree
 g.nvim_tree_add_trailing = 0 -- append a trailing slash to folder names
-g.nvim_tree_git_hl = git_status
+g.nvim_tree_git_hl = "git_status"
 g.nvim_tree_highlight_opened_files = 0
 g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }
 
@@ -79,7 +79,7 @@ g.nvim_tree_show_icons = {
   folders = 1,
   files = 1,
   folder_arrows = 1,
-  git = git_status,
+  git = "git_status",
 }
 
 g.nvim_tree_icons = {

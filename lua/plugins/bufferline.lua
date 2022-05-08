@@ -1,5 +1,6 @@
 require('bufferline').setup {
   options = {
+    themable = true,
     mode = "buffers", -- set to "tabs" to only show tabpages instead
     close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
     right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
@@ -23,11 +24,11 @@ require('bufferline').setup {
     max_name_length = 18,
     max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
     tab_size = 18,
-    diagnostics = "nvim_lsp",
+    diagnostics = "coc", -- "nvim_lsp",
     diagnostics_update_in_insert = false,
     diagnostics_indicator = function(count, level)
-        local icon = level:match("error") and " " or ""
-        return " " .. icon .. count
+      local icon = level:match("error") and " " or ""
+      return " " .. icon .. count
     end,
     color_icons = true, -- whether or not to add the filetype icon highlights
     show_buffer_icons = true, -- disable filetype icons for buffers
@@ -42,5 +43,35 @@ require('bufferline').setup {
     enforce_regular_tabs = false,
     always_show_bufferline = true,
     sort_by = 'insert_at_end', -- | 'insert_at_end' | 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs'
+    highlights = {
+      fill = {
+        background = "#FF0000",
+      },
+      indicator_selected = {
+        guifg = {
+          attribute = "fg",
+          highlight = "Type"
+        },
+        guibg = {
+          attribute = "bg",
+          highlight = "Type"
+        },
+      },
+      numbers = {
+        guifg = {
+          attribute = "fg",
+          highlight = "Type"
+        },
+      },
+      buffer_selected = {
+        gui = "bold",
+      },
+      pick = {
+        gui = "bold",
+      },
+      pick_selected = {
+        gui = "bold",
+      },
+    }, -- };
   }
 }

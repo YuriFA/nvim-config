@@ -69,41 +69,21 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  LuaSnip = {
-    loaded = true,
-    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/LuaSnip",
-    url = "https://github.com/L3MON4D3/LuaSnip"
-  },
   ["bufferline.nvim"] = {
     config = { "require('plugins.bufferline')" },
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
-  ["cmp-buffer"] = {
+  ci_dark = {
     loaded = true,
-    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/cmp-buffer",
-    url = "https://github.com/hrsh7th/cmp-buffer"
+    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/ci_dark",
+    url = "https://github.com/yunlingz/ci_dark"
   },
-  ["cmp-nvim-lsp"] = {
+  ["coc.nvim"] = {
     loaded = true,
-    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
-    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
-  },
-  ["cmp-nvim-lua"] = {
-    loaded = true,
-    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
-    url = "https://github.com/hrsh7th/cmp-nvim-lua"
-  },
-  ["cmp-path"] = {
-    loaded = true,
-    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/cmp-path",
-    url = "https://github.com/hrsh7th/cmp-path"
-  },
-  cmp_luasnip = {
-    loaded = true,
-    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
-    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/coc.nvim",
+    url = "https://github.com/neoclide/coc.nvim"
   },
   ["emmet-vim"] = {
     loaded = true,
@@ -120,36 +100,22 @@ _G.packer_plugins = {
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
+  },
   ["lualine.nvim"] = {
     config = { "require('plugins.lualine')" },
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["null-ls.nvim"] = {
-    config = { "\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20plugins.null-ls\frequire\0" },
-    load_after = {},
-    loaded = true,
-    needs_bufread = false,
-    path = "/Users/yuri/.local/share/nvim/site/pack/packer/opt/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
-  },
-  ["nvim-cmp"] = {
-    config = { "require('plugins.cmp')" },
-    loaded = true,
-    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/nvim-cmp",
-    url = "https://github.com/hrsh7th/nvim-cmp"
-  },
   ["nvim-colorizer.lua"] = {
     config = { "require('plugins.colorizer')" },
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
-  },
-  ["nvim-lspconfig"] = {
-    after = { "null-ls.nvim" },
-    loaded = true,
-    only_config = true
   },
   ["nvim-tree.lua"] = {
     config = { "require('plugins.nvimtree')" },
@@ -197,6 +163,16 @@ _G.packer_plugins = {
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
+  ["vim-convert-color-to"] = {
+    loaded = true,
+    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/vim-convert-color-to",
+    url = "https://github.com/amadeus/vim-convert-color-to"
+  },
+  ["vim-one"] = {
+    loaded = true,
+    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/vim-one",
+    url = "https://github.com/rakr/vim-one"
+  },
   ["vim-sensible"] = {
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/vim-sensible",
@@ -210,42 +186,26 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-require('plugins.colorizer')
-time([[Config for nvim-colorizer.lua]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
-require('plugins.bufferline')
-time([[Config for bufferline.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require('plugins.nvimtree')
-time([[Config for nvim-tree.lua]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 require('plugins.lualine')
 time([[Config for lualine.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require('plugins.cmp')
-time([[Config for nvim-cmp]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require('plugins.lsp')
-time([[Config for nvim-lspconfig]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require('plugins.treesitter')
 time([[Config for nvim-treesitter]], false)
--- Load plugins in order defined by `after`
-time([[Sequenced loading]], true)
-vim.cmd [[ packadd null-ls.nvim ]]
-
--- Config for: null-ls.nvim
-try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20plugins.null-ls\frequire\0", "config", "null-ls.nvim")
-
-time([[Sequenced loading]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+require('plugins.colorizer')
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require('plugins.nvimtree')
+time([[Config for nvim-tree.lua]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+require('plugins.bufferline')
+time([[Config for bufferline.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
