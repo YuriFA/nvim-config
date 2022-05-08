@@ -17,9 +17,10 @@ return require('packer').startup(function(use)
   -- use 'morhetz/gruvbox'
   use 'tomasiser/vim-code-dark'
   -- use { "catppuccin/nvim", as = "catppuccin" }
-  use 'yunlingz/ci_dark'
-  use 'rakr/vim-one'
-  use "rebelot/kanagawa.nvim"
+  -- use 'yunlingz/ci_dark'
+  -- use 'rakr/vim-one'
+  use 'rebelot/kanagawa.nvim'
+  use 'folke/tokyonight.nvim'
   -- use { 'projekt0n/github-nvim-theme',
   --   config = "require('plugins.github-theme')"
   -- }
