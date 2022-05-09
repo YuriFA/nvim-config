@@ -21,9 +21,8 @@ return require('packer').startup(function(use)
   -- use 'rakr/vim-one'
   use 'rebelot/kanagawa.nvim'
   use 'folke/tokyonight.nvim'
-  -- use { 'projekt0n/github-nvim-theme',
-  --   config = "require('plugins.github-theme')"
-  -- }
+  use 'w0ng/vim-hybrid'
+  use 'projekt0n/github-nvim-theme'
   -- use 'bdesham/biogoo'
   -- use 'j201/stainless'
   -- use 'jonathanfilip/vim-lucius'

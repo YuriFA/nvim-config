@@ -12,10 +12,18 @@ local function kanagawa()
   vim.cmd("colorscheme kanagawa")
 end
 
+local function github()
+  require('github-theme').setup({
+    theme_style = "light",
+  })
+end
+
 local function tokyonight()
   vim.o.background = 'light'
   vim.g.tokyonight_style = "day"
   vim.g.tokyonight_italic_functions = true
+  vim.g.tokyonight_day_brightness = 0.1
+
   vim.cmd("colorscheme tokyonight")
 end
 
@@ -31,3 +39,4 @@ end
 
 -- kanagawa()
 tokyonight()
+-- github()

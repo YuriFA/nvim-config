@@ -95,6 +95,11 @@ _G.packer_plugins = {
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
+  },
   ["kanagawa.nvim"] = {
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
@@ -168,6 +173,11 @@ _G.packer_plugins = {
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/vim-convert-color-to",
     url = "https://github.com/amadeus/vim-convert-color-to"
   },
+  ["vim-hybrid"] = {
+    loaded = true,
+    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/vim-hybrid",
+    url = "https://github.com/w0ng/vim-hybrid"
+  },
   ["vim-sensible"] = {
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/vim-sensible",
@@ -181,6 +191,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+require('plugins.lualine')
+time([[Config for lualine.nvim]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+require('plugins.colorizer')
+time([[Config for nvim-colorizer.lua]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require('plugins.treesitter')
@@ -193,14 +211,6 @@ time([[Config for bufferline.nvim]], false)
 time([[Config for nvim-tree.lua]], true)
 require('plugins.nvimtree')
 time([[Config for nvim-tree.lua]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-require('plugins.colorizer')
-time([[Config for nvim-colorizer.lua]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-require('plugins.lualine')
-time([[Config for lualine.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
