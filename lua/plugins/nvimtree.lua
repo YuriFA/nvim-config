@@ -25,6 +25,42 @@ nvimtree.setup {
     indent_markers = {
       enable = false,
     },
+    add_trailing = false,
+    highlight_git = true,
+    highlight_opened_files = 'all',
+    root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" },
+    icons = {
+      show = {
+        file = true,
+        folder = true,
+        folder_arrow = true,
+        git = true,
+      },
+      glyphs = {
+        default = "",
+        symlink = "",
+        git = {
+          deleted = "",
+          ignored = "",
+          renamed = "",
+          staged = "",
+          unmerged = "",
+          unstaged = "",
+          untracked = "",
+        },
+        folder = {
+          arrow_closed = "▸",
+          arrow_open = "▾",
+          default = "",
+          empty = "",
+          empty_open = "",
+          open = "",
+          symlink = "",
+          symlink_open = "",
+        },
+      }
+    }
+
   },
   view = {
     side = 'right',

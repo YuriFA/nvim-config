@@ -1,4 +1,8 @@
-local function kanagawa()
+M = {}
+
+M.kanagawa = function()
+  vim.o.background = 'dark'
+
   require("kanagawa").setup({
     dimInactive = false,
     globalStatus = true,
@@ -9,16 +13,26 @@ local function kanagawa()
     -- theme = 'light'
   })
   vim.o.background = 'dark'
+
   vim.cmd("colorscheme kanagawa")
 end
 
-local function github()
+M.github = function()
   require('github-theme').setup({
-    theme_style = "light",
+    theme_style = 'light',
+    function_style = 'italic',
+    dark_sidebar = true,
+    dark_float = true,
   })
 end
 
-local function tokyonight()
+M.bergen = function()
+  vim.o.background = 'light'
+
+  vim.cmd("colorscheme bergen")
+end
+
+M.tokyonight = function()
   vim.o.background = 'light'
   vim.g.tokyonight_style = "day"
   vim.g.tokyonight_italic_functions = true
@@ -27,16 +41,37 @@ local function tokyonight()
   vim.cmd("colorscheme tokyonight")
 end
 
--- Black line numbers and signcolumn
--- vim.cmd('hi! LineNr guibg=0')
--- vim.cmd('hi! GitGutterAdd guibg=0')
--- vim.cmd('hi! GitGutterChange guibg=0')
--- vim.cmd('hi! GitGutterDelete guibg=0')
--- vim.cmd('hi! SignColumn guibg=0')
+M.embark = function()
+  vim.o.background = 'light'
+  vim.cmd("colorscheme embark")
+end
 
--- -- Make ColorColumn the same color as cursorline
--- vim.cmd('hi! link ColorColumn CursorLine')
+M.gruvbox = function()
+  vim.o.background = 'dark'
+  vim.cmd("colorscheme gruvbox")
+end
 
--- kanagawa()
-tokyonight()
--- github()
+M.everforest = function()
+  vim.o.background = 'dark'
+  vim.cmd("colorscheme everforest")
+end
+
+M.nord = function()
+  vim.o.background = 'dark'
+  vim.cmd("colorscheme nord")
+end
+
+M.paper = function()
+  vim.cmd("colorscheme paper")
+end
+
+M.inkstained = function()
+  vim.o.background = 'dark'
+  vim.cmd("colorscheme inkstained")
+end
+
+M.paper()
+-- M.everforest()
+
+vim.api.nvim_set_hl(0, 'DiffText', { fg = "#ffffff", bg = "#1d3b40" })
+vim.api.nvim_set_hl(0, 'DiffAdd', { fg = "#ffffff", bg = "#1d3450" })

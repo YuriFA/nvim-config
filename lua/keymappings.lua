@@ -35,20 +35,20 @@ keymap("n", "<leader>fw", ":Telescope live_grep <CR>", { noremap = true, silent 
 keymap("n", "<C-n>", ":NvimTreeToggle <CR>", { noremap = true, silent = true })
 
 -- COC
--- keymap("n", "<leader>l", ":CocCommand eslint.executeAutofix<CR>", {})
-keymap("n", "K", ":call CocActionAsync('doHover')<CR>", { silent = true, noremap = true })
+keymap("n", "<leader>l", ":CocCommand eslint.executeAutofix<CR>", {})
 keymap("n", "<leader>F", ":call CocActionAsync('format')<CR>", { silent = true, noremap = true })
-keymap("i", "<C-Space>", "coc#refresh()", { silent = true, expr = true })
-keymap("i", "<TAB>", "pumvisible() ? '<C-n>' : '<TAB>'", { noremap = true, silent = true, expr = true })
-keymap("i", "<S-TAB>", "pumvisible() ? '<C-p>' : '<C-h>'", { noremap = true, expr = true })
-keymap("i", "<CR>", "pumvisible() ? coc#_select_confirm() : '<C-G>u<CR><C-R>=coc#on_enter()<CR>'", { silent = true, expr = true, noremap = true })
-keymap("n", "<leader>rn", "<Plug>(coc-rename)", {})
-keymap("n", "<leader>ac", "<Plug>(coc-codeaction)", {})
-keymap("n", "[g", "<Plug>(coc-diagnostic-prev)", { silent = true })
-keymap("n", "]g", "<Plug>(coc-diagnostic-next)", { silent = true })
-keymap("n", "gd", "<Plug>(coc-definition)", { noremap = true, silent = true })
-keymap("n", "gr", "<Plug>(coc-references)", { noremap = true, silent = true })
-keymap("n", "gi", "<Plug>(coc-implementation)", { noremap = true, silent = true })
+-- keymap("n", "K", ":call CocActionAsync('doHover')<CR>", { silent = true, noremap = true })
+-- keymap("i", "<C-Space>", "coc#refresh()", { silent = true, expr = true })
+-- keymap("i", "<TAB>", "coc#pum#visible() ? 'coc#pum#next(1)' : '<TAB>'", { noremap = true, silent = true, expr = true })
+-- keymap("i", "<S-TAB>", "coc#pum#visible() ? 'coc#pum#prev(1)' : '<C-h>'", { noremap = true, expr = true })
+-- keymap("i", "<CR>", "coc#pum#visible() ? coc#_select_confirm() : '<C-G>u<CR><C-R>=coc#on_enter()<CR>'", { silent = true, expr = true, noremap = true })
+-- keymap("n", "<leader>rn", "<Plug>(coc-rename)", {})
+-- keymap("n", "<leader>ac", "<Plug>(coc-codeaction)", {})
+-- keymap("n", "[g", "<Plug>(coc-diagnostic-prev)", { silent = true })
+-- keymap("n", "]g", "<Plug>(coc-diagnostic-next)", { silent = true })
+-- keymap("n", "gd", "<Plug>(coc-definition)", { noremap = true, silent = true })
+-- keymap("n", "gr", "<Plug>(coc-references)", { noremap = true, silent = true })
+-- keymap("n", "gi", "<Plug>(coc-implementation)", { noremap = true, silent = true })
 
 -- LSP
 -- keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
@@ -63,3 +63,7 @@ keymap("n", "gi", "<Plug>(coc-implementation)", { noremap = true, silent = true 
 -- keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
 -- keymap("n", "[g", "<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'rounded' }})<CR>", { noremap = true, silent = true })
 -- keymap("n", "]g", "<cmd>lua vim.diagnostic.goto_next({ float = { border = 'rounded' }})<CR>", { noremap = true, silent = true })
+--
+
+-- COC 
+vim.cmd "source ~/.config/nvim/keymappings-coc.vim"

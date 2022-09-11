@@ -14,20 +14,16 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  -- use 'morhetz/gruvbox'
   use 'tomasiser/vim-code-dark'
-  -- use { "catppuccin/nvim", as = "catppuccin" }
-  -- use 'yunlingz/ci_dark'
-  -- use 'rakr/vim-one'
   use 'rebelot/kanagawa.nvim'
   use 'folke/tokyonight.nvim'
-  use 'w0ng/vim-hybrid'
   use 'projekt0n/github-nvim-theme'
-  -- use 'bdesham/biogoo'
-  -- use 'j201/stainless'
-  -- use 'jonathanfilip/vim-lucius'
-  -- use 'kba/vim-eclipse-color'
-  -- use 'NLKNguyen/papercolor-theme'
+  use 'embark-theme/vim'
+  use 'morhetz/gruvbox'
+  use 'sainnhe/everforest'
+  use 'YorickPeterse/vim-paper'
+  use 'leafOfTree/vim-svelte-theme'
+  use 'YorickPeterse/Autumn.vim'
 
   use 'nvim-lua/plenary.nvim'
   use 'mattn/emmet-vim'
@@ -35,6 +31,9 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
   use 'tpope/vim-sensible'
+  use 'tpope/vim-fugitive'
+
+  use { 'akinsho/git-conflict.nvim', config = "require('plugins.git-conflict')" }
 
   use { 'junegunn/fzf', run = 'fzf#install()' }
   use 'junegunn/fzf.vim'
@@ -99,4 +98,6 @@ return require('packer').startup(function(use)
     run = ':TSUpdate' }
 
   use { 'neoclide/coc.nvim', branch = 'release' }
+
+  use { 'slim-template/vim-slim' }
 end)

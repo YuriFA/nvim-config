@@ -2,4 +2,7 @@
   "Lua.telemetry.enable": false,
   "typescript.format.enabled": false,
   "eslint.format.enable": true,
+  "suggest.noselect": true,
+  "suggest.enablePreselect": false,
+  "svelte.enable-ts-plugin": true
 }
