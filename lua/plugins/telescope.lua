@@ -14,8 +14,10 @@ telescope.setup {
       "--line-number",
       "--column",
       "--smart-case",
+      "--fixed-strings",
+      "-u",
     },
-    -- prompt_prefix = "   ",
+    prompt_prefix = "   ",
     selection_caret = "  ",
     entry_prefix = "  ",
     initial_mode = "insert",
@@ -36,7 +38,7 @@ telescope.setup {
       preview_cutoff = 120,
     },
     file_sorter = require("telescope.sorters").get_fuzzy_file,
-    file_ignore_patterns = { "node_modules" },
+    file_ignore_patterns = { "node_modules/", ".yarn/", ".git/", ".github/", "build/", "log/", "yarn.lock" },
     generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
     path_display = { "truncate" },
     winblend = 0,
@@ -52,7 +54,14 @@ telescope.setup {
   },
 }
 
-local extensions = { "themes", "terms" }
+local extensions = {
+  "themes",
+  "terms",
+  coc = {
+    theme = 'ivy',
+    prefer_locations = true, -- always use Telescope locations to preview definitions/declarations/implementations etc
+  }
+}
 
 pcall(function()
   for _, ext in ipairs(extensions) do

@@ -126,6 +126,11 @@ _G.packer_plugins = {
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
   },
+  ["jellybeans-nvim"] = {
+    loaded = true,
+    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/jellybeans-nvim",
+    url = "https://github.com/metalelf0/jellybeans-nvim"
+  },
   ["kanagawa.nvim"] = {
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
@@ -137,17 +142,27 @@ _G.packer_plugins = {
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
+  },
   ["nvim-colorizer.lua"] = {
     config = { "require('plugins.colorizer')" },
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
+  ["nvim-grey"] = {
+    loaded = true,
+    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/nvim-grey",
+    url = "https://gitlab.com/yorickpeterse/nvim-grey"
+  },
   ["nvim-tree.lua"] = {
     config = { "require('plugins.nvimtree')" },
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/kyazdani42/nvim-tree.lua"
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     config = { "require('plugins.treesitter')" },
@@ -158,7 +173,7 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
-    url = "https://github.com/kyazdani42/nvim-web-devicons"
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -169,6 +184,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["telescope-coc.nvim"] = {
+    loaded = true,
+    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/telescope-coc.nvim",
+    url = "https://github.com/fannheyward/telescope-coc.nvim"
   },
   ["telescope.nvim"] = {
     commands = { "Telescope" },
@@ -228,27 +248,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
-  },
-  ["vim-svelte-theme"] = {
-    loaded = true,
-    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/vim-svelte-theme",
-    url = "https://github.com/leafOfTree/vim-svelte-theme"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-require('plugins.lualine')
-time([[Config for lualine.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require('plugins.treesitter')
-time([[Config for nvim-treesitter]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-require('plugins.colorizer')
-time([[Config for nvim-colorizer.lua]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require('plugins.nvimtree')
+time([[Config for nvim-tree.lua]], false)
 -- Config for: bufferline.nvim
 time([[Config for bufferline.nvim]], true)
 require('plugins.bufferline')
@@ -257,10 +264,18 @@ time([[Config for bufferline.nvim]], false)
 time([[Config for git-conflict.nvim]], true)
 require('plugins.git-conflict')
 time([[Config for git-conflict.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require('plugins.nvimtree')
-time([[Config for nvim-tree.lua]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+require('plugins.colorizer')
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require('plugins.treesitter')
+time([[Config for nvim-treesitter]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+require('plugins.lualine')
+time([[Config for lualine.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)

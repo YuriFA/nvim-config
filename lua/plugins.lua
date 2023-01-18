@@ -22,8 +22,12 @@ return require('packer').startup(function(use)
   use 'morhetz/gruvbox'
   use 'sainnhe/everforest'
   use 'YorickPeterse/vim-paper'
-  use 'leafOfTree/vim-svelte-theme'
   use 'YorickPeterse/Autumn.vim'
+  use 'https://gitlab.com/yorickpeterse/nvim-grey'
+  use {
+    'metalelf0/jellybeans-nvim',
+    requires = "rktjmp/lush.nvim"
+  }
 
   use 'nvim-lua/plenary.nvim'
   use 'mattn/emmet-vim'
@@ -42,21 +46,24 @@ return require('packer').startup(function(use)
     config = "require('plugins.colorizer')" }
   use 'amadeus/vim-convert-color-to'
 
-  use 'kyazdani42/nvim-web-devicons'
+  use 'nvim-tree/nvim-web-devicons'
   use { 'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
     config = "require('plugins.lualine')" }
   use { 'akinsho/bufferline.nvim',
     tag = "*",
-    requires = 'kyazdani42/nvim-web-devicons',
+    requires = 'nvim-tree/nvim-web-devicons',
     config = "require('plugins.bufferline')" }
 
-
   use {
-    'kyazdani42/nvim-tree.lua',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-    config = "require('plugins.nvimtree')"
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+    config = "require('plugins.nvimtree')",
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
+
 
   use {
     "nvim-telescope/telescope.nvim",
@@ -64,6 +71,7 @@ return require('packer').startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' },
     config = "require('plugins.telescope')",
   }
+  use 'fannheyward/telescope-coc.nvim'
 
   -- LSP Cmp
   -- use { 'hrsh7th/cmp-nvim-lsp' }

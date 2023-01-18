@@ -26,12 +26,6 @@ M.github = function()
   })
 end
 
-M.bergen = function()
-  vim.o.background = 'light'
-
-  vim.cmd("colorscheme bergen")
-end
-
 M.tokyonight = function()
   vim.o.background = 'light'
   vim.g.tokyonight_style = "day"
@@ -51,27 +45,44 @@ M.gruvbox = function()
   vim.cmd("colorscheme gruvbox")
 end
 
+M.gruvbox_light = function()
+  vim.o.background = 'light'
+  vim.g.gruvbox_contrast_light = "hard"
+  vim.cmd("colorscheme gruvbox")
+end
+
 M.everforest = function()
   vim.o.background = 'dark'
   vim.cmd("colorscheme everforest")
 end
 
-M.nord = function()
+M.codedark = function()
   vim.o.background = 'dark'
-  vim.cmd("colorscheme nord")
+  vim.cmd("colorscheme codedark")
 end
 
 M.paper = function()
   vim.cmd("colorscheme paper")
 end
 
-M.inkstained = function()
-  vim.o.background = 'dark'
-  vim.cmd("colorscheme inkstained")
+M.grey = function()
+  vim.o.background = 'light'
+  vim.cmd("color grey")
 end
 
-M.paper()
--- M.everforest()
+M.autumn = function()
+  vim.o.background = 'dark'
+  vim.cmd("colorscheme autumn")
+end
 
-vim.api.nvim_set_hl(0, 'DiffText', { fg = "#ffffff", bg = "#1d3b40" })
-vim.api.nvim_set_hl(0, 'DiffAdd', { fg = "#ffffff", bg = "#1d3450" })
+M.jellybeans_nvim = function()
+  vim.o.background = 'dark'
+  vim.cmd("colorscheme jellybeans-nvim")
+end
+
+M.codedark()
+-- M.autumn()
+-- M.grey()
+
+-- vim.api.nvim_set_hl(0, 'DiffText', { fg = "#ffffff", bg = "#1d3b40" })
+-- vim.api.nvim_set_hl(0, 'DiffAdd', { fg = "#ffffff", bg = "#1d3450" })

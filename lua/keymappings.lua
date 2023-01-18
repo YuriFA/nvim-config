@@ -24,12 +24,12 @@ keymap("n", "<C-h>", ":wincmd h<CR>", { noremap = true, silent = true })
 keymap("n", "<C-l>", ":wincmd l<CR>", { noremap = true, silent = true })
 
 -- FIND FILES
-keymap("n", "<leader>fa", ":Rg<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>fw", ":Rg<CR>", { noremap = true, silent = true })
 keymap("n", "<leader>fc", ":Commits<CR>", { noremap = true, silent = true })
 
 -- TELESCOPE
 keymap("n", "<leader>ff", ":Telescope find_files hidden=true<CR>", { noremap = true, silent = true })
-keymap("n", "<leader>fw", ":Telescope live_grep <CR>", { noremap = true, silent = true })
+keymap("n", "<leader>fa", ":Telescope live_grep debounce=100<CR>", { noremap = true, silent = true })
 
 -- NVIM TREE
 keymap("n", "<C-n>", ":NvimTreeToggle <CR>", { noremap = true, silent = true })
@@ -43,12 +43,14 @@ keymap("n", "<leader>F", ":call CocActionAsync('format')<CR>", { silent = true, 
 -- keymap("i", "<S-TAB>", "coc#pum#visible() ? 'coc#pum#prev(1)' : '<C-h>'", { noremap = true, expr = true })
 -- keymap("i", "<CR>", "coc#pum#visible() ? coc#_select_confirm() : '<C-G>u<CR><C-R>=coc#on_enter()<CR>'", { silent = true, expr = true, noremap = true })
 -- keymap("n", "<leader>rn", "<Plug>(coc-rename)", {})
--- keymap("n", "<leader>ac", "<Plug>(coc-codeaction)", {})
--- keymap("n", "[g", "<Plug>(coc-diagnostic-prev)", { silent = true })
--- keymap("n", "]g", "<Plug>(coc-diagnostic-next)", { silent = true })
+keymap("n", "<leader>ac", ":Telescope coc code_actions<CR>", { silent = true })
+keymap("n", "[g", "<Plug>(coc-diagnostic-prev)", { silent = true })
+keymap("n", "]g", "<Plug>(coc-diagnostic-next)", { silent = true })
 -- keymap("n", "gd", "<Plug>(coc-definition)", { noremap = true, silent = true })
--- keymap("n", "gr", "<Plug>(coc-references)", { noremap = true, silent = true })
--- keymap("n", "gi", "<Plug>(coc-implementation)", { noremap = true, silent = true })
+keymap("n", "gd", ":Telescope coc definitions<CR>", { noremap = true, silent = true })
+keymap("n", "gy", ":Telescope coc type_definitions<CR>", { noremap = true, silent = true })
+keymap("n", "gr", ":Telescope coc references<CR>", { noremap = true, silent = true })
+keymap("n", "gi", ":Telescope coc implementations<CR>", { noremap = true, silent = true })
 
 -- LSP
 -- keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })

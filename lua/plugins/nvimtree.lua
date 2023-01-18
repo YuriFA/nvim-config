@@ -63,9 +63,8 @@ nvimtree.setup {
 
   },
   view = {
+    adaptive_size = true,
     side = 'right',
-    width = 60,
-    height = 30,
     preserve_window_proportions = true
   },
   actions = {
