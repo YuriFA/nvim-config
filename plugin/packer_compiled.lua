@@ -120,6 +120,12 @@ _G.packer_plugins = {
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
   },
+  ["git-conflict.nvim"] = {
+    config = { "require('custom.plugins.git-conflict')" },
+    loaded = true,
+    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/git-conflict.nvim",
+    url = "https://github.com/akinsho/git-conflict.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -129,6 +135,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["lspsaga.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0" },
+    loaded = true,
+    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -163,6 +175,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-colorizer.lua"] = {
+    config = { "require('custom.plugins.colorizer')" },
+    loaded = true,
+    path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -243,10 +261,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require('custom.plugins.cmp')
-time([[Config for nvim-cmp]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 require('custom.plugins.nvimtree')
@@ -255,6 +269,22 @@ time([[Config for nvim-tree.lua]], false)
 time([[Config for bufferline.nvim]], true)
 require('custom.plugins.bufferline')
 time([[Config for bufferline.nvim]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+require('custom.plugins.colorizer')
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: git-conflict.nvim
+time([[Config for git-conflict.nvim]], true)
+require('custom.plugins.git-conflict')
+time([[Config for git-conflict.nvim]], false)
+-- Config for: lspsaga.nvim
+time([[Config for lspsaga.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0", "config", "lspsaga.nvim")
+time([[Config for lspsaga.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require('custom.plugins.cmp')
+time([[Config for nvim-cmp]], false)
 -- Conditional loads
 time([[Conditional loading of telescope-fzf-native.nvim]], true)
   require("packer.load")({"telescope-fzf-native.nvim"}, {}, _G.packer_plugins)

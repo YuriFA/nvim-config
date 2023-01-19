@@ -59,16 +59,7 @@ keymap("n", "<C-n>", ":NvimTreeToggle <CR>", { noremap = true, silent = true })
 -- keymap("n", "gi", ":Telescope coc implementations<CR>", { noremap = true, silent = true })
 
 -- LSP
--- keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
--- keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
--- keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
--- keymap("n", "<Leader>ac", "<cmd>lua require'telescope.builtin'.lsp_code_actions()<CR>", { noremap = true, silent = true })
--- keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true, silent = true })
--- keymap("n", "<leader>F", "<cmd>lua vim.lsp.buf.formatting()<CR>", { noremap = true, silent = true })
--- keymap("v", "<leader>F", "<cmd>'<.'>lua vim.lsp.buf.range_formatting()<CR>", { noremap = true, silent = true })
--- keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
-
-local nmap = function(mode, keys, func, desc)
+local lspkeymap = function(mode, keys, func, desc)
 	if desc then
 		desc = "LSP: " .. desc
 	end
@@ -76,29 +67,35 @@ local nmap = function(mode, keys, func, desc)
 	vim.keymap.set(mode, keys, func, { desc = desc })
 end
 
-nmap("n", "<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-nmap("n", "<leader>ac", vim.lsp.buf.code_action, "[C]ode [A]ction")
+-- nmap("n", "<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+-- nmap("n", "<leader>ac", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
-nmap("n", "gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-nmap("n", "gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-nmap("n", "gi", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
-nmap("n", "<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
-nmap("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-nmap("n", "<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+-- nmap("n", "gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+lspkeymap("n", "gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+lspkeymap("n", "gi", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
+lspkeymap("n", "<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
+lspkeymap("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
+lspkeymap("n", "<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
 -- See `:help K` for why this keymap
-nmap("n", "K", vim.lsp.buf.hover, "Hover Documentation")
-nmap("n", "<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
+-- nmap("n", "K", vim.lsp.buf.hover, "Hover Documentation")
+lspkeymap("n", "<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
 
 -- Lesser used LSP functionality
-nmap("n", "gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-nmap("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
-nmap("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
-nmap("n", "<leader>wl", function()
+lspkeymap("n", "gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+lspkeymap("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
+lspkeymap("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
+lspkeymap("n", "<leader>wl", function()
 	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 end, "[W]orkspace [L]ist Folders")
 
-nmap("n", "<leader>F", vim.lsp.buf.format)
+lspkeymap("n", "<leader>F", vim.lsp.buf.format)
 
-nmap("n", "[g", vim.diagnostic.goto_prev)
-nmap("n", "]g", vim.diagnostic.goto_next)
+lspkeymap("n", "[g", vim.diagnostic.goto_prev)
+lspkeymap("n", "]g", vim.diagnostic.goto_next)
+
+keymap("n", "<leader>rn", "<cmd>:Lspsaga rename<CR>", { noremap = true, silent = true, desc = "LSP: [R]e[n]ame" })
+keymap("n", "<leader>ac", "<cmd>:Lspsaga code_action<CR>", { noremap = true, silent = true, desc = "LSP: [C]ode [A]ction" })
+keymap("v", "<leader>ac", "<cmd>:Lspsaga code_action<CR>", { noremap = true, silent = true, desc = "LSP: [C]ode [A]ction" })
+keymap("n", "gd", "<cmd>:Lspsaga goto_definition<CR>", { noremap = true, silent = true, desc = "LSP: [G]oto [D]efinition" })
+keymap("n", "K", "<cmd>:Lspsaga hover_doc<CR>", { noremap = true, silent = true, desc = "LSP: Hover Documentation" })
