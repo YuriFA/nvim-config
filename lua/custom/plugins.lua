@@ -1,16 +1,50 @@
 return function(use)
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = 'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    config = "require('custom.plugins.nvimtree')",
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
+	use({
+		"nvim-tree/nvim-tree.lua",
+		requires = "nvim-tree/nvim-web-devicons", -- optional, for file icons
+		config = "require('custom.plugins.nvimtree')",
+		tag = "nightly", -- optional, updated every week. (see issue #1193)
+	})
 
-  use { 'akinsho/bufferline.nvim',
-    tag = "v3.*",
-    requires = 'nvim-tree/nvim-web-devicons',
-    config = "require('custom.plugins.bufferline')"
-  }
+	use({
+		"akinsho/bufferline.nvim",
+		tag = "v3.*",
+		requires = "nvim-tree/nvim-web-devicons",
+		config = "require('custom.plugins.bufferline')",
+	})
+
+	-- use {'nvim-telescope/telescope-ui-select.nvim' }
+
+	-- LSP Cmp Autocompletion
+	use({
+		"hrsh7th/nvim-cmp",
+		requires = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-nvim-lua",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
+		},
+		config = "require('custom.plugins.cmp')",
+	})
+
+	use({
+		"jose-elias-alvarez/null-ls.nvim",
+		after = "nvim-lspconfig",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("custom.plugins.null-ls").setup()
+		end,
+	})
+
+	use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+		config = function()
+			require("custom.plugins.lspsaga")
+		end,
+	})
 end
 
 -- return require('packer').startup(function(use)
@@ -67,7 +101,6 @@ end
 --     tag = 'nightly' -- optional, updated every week. (see issue #1193)
 --   }
 
-
 --   use {
 --     "nvim-telescope/telescope.nvim",
 --     cmd = "Telescope",
@@ -93,15 +126,6 @@ end
 --   --   branch = 'feat/eslint-yarn2-pnp',
 --   --   requires = { 'hrsh7th/cmp-nvim-lsp', opt = true },
 --   --   config = "require('plugins.lsp')"
---   -- }
-
---   -- use {
---   --   'jose-elias-alvarez/null-ls.nvim',
---   --   after = "nvim-lspconfig",
---   --   requires = { "nvim-lua/plenary.nvim" },
---   --   config = function()
---   --     require("plugins.null-ls").setup()
---   --   end,
 --   -- }
 
 --   use { 'nvim-treesitter/nvim-treesitter',
