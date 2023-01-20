@@ -73,7 +73,7 @@ end
 -- nmap("n", "gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
 lspkeymap("n", "gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 lspkeymap("n", "gi", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
-lspkeymap("n", "<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
+lspkeymap("n", "gy", vim.lsp.buf.type_definition, "[Go] to T[y]pe Definition")
 lspkeymap("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
 lspkeymap("n", "<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
@@ -91,11 +91,27 @@ end, "[W]orkspace [L]ist Folders")
 
 lspkeymap("n", "<leader>F", vim.lsp.buf.format)
 
-lspkeymap("n", "[g", vim.diagnostic.goto_prev)
-lspkeymap("n", "]g", vim.diagnostic.goto_next)
+lspkeymap("n", "[g", vim.diagnostic.goto_prev, "Jump to previous diagnostic")
+lspkeymap("n", "]g", vim.diagnostic.goto_next, "Jump to nextdiagnostic")
 
+-- LSP Saga
 keymap("n", "<leader>rn", "<cmd>:Lspsaga rename<CR>", { noremap = true, silent = true, desc = "LSP: [R]e[n]ame" })
-keymap("n", "<leader>ac", "<cmd>:Lspsaga code_action<CR>", { noremap = true, silent = true, desc = "LSP: [C]ode [A]ction" })
-keymap("v", "<leader>ac", "<cmd>:Lspsaga code_action<CR>", { noremap = true, silent = true, desc = "LSP: [C]ode [A]ction" })
-keymap("n", "gd", "<cmd>:Lspsaga goto_definition<CR>", { noremap = true, silent = true, desc = "LSP: [G]oto [D]efinition" })
+keymap(
+	"n",
+	"<leader>ac",
+	"<cmd>:Lspsaga code_action<CR>",
+	{ noremap = true, silent = true, desc = "LSP: [C]ode [A]ction" }
+)
+keymap(
+	"v",
+	"<leader>ac",
+	"<cmd>:Lspsaga code_action<CR>",
+	{ noremap = true, silent = true, desc = "LSP: [C]ode [A]ction" }
+)
+keymap(
+	"n",
+	"gd",
+	"<cmd>:Lspsaga goto_definition<CR>",
+	{ noremap = true, silent = true, desc = "LSP: [G]oto [D]efinition" }
+)
 keymap("n", "K", "<cmd>:Lspsaga hover_doc<CR>", { noremap = true, silent = true, desc = "LSP: Hover Documentation" })

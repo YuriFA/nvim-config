@@ -41,9 +41,7 @@ return function(use)
 	use({
 		"glepnir/lspsaga.nvim",
 		branch = "main",
-		config = function()
-			require("lspsaga").setup({})
-		end,
+		config = "require('custom.plugins.lspsaga')",
 	})
 
 	use({

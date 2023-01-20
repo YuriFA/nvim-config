@@ -137,7 +137,7 @@ _G.packer_plugins = {
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lspsaga.nvim"] = {
-    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0" },
+    config = { "require('custom.plugins.lspsaga')" },
     loaded = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "https://github.com/glepnir/lspsaga.nvim"
@@ -269,6 +269,10 @@ time([[Config for nvim-tree.lua]], false)
 time([[Config for bufferline.nvim]], true)
 require('custom.plugins.bufferline')
 time([[Config for bufferline.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require('custom.plugins.cmp')
+time([[Config for nvim-cmp]], false)
 -- Config for: nvim-colorizer.lua
 time([[Config for nvim-colorizer.lua]], true)
 require('custom.plugins.colorizer')
@@ -279,26 +283,22 @@ require('custom.plugins.git-conflict')
 time([[Config for git-conflict.nvim]], false)
 -- Config for: lspsaga.nvim
 time([[Config for lspsaga.nvim]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0", "config", "lspsaga.nvim")
+require('custom.plugins.lspsaga')
 time([[Config for lspsaga.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require('custom.plugins.cmp')
-time([[Config for nvim-cmp]], false)
 -- Conditional loads
 time([[Conditional loading of telescope-fzf-native.nvim]], true)
   require("packer.load")({"telescope-fzf-native.nvim"}, {}, _G.packer_plugins)
 time([[Conditional loading of telescope-fzf-native.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-treesitter ]]
-vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 vim.cmd [[ packadd nvim-lspconfig ]]
 vim.cmd [[ packadd null-ls.nvim ]]
 
 -- Config for: null-ls.nvim
 try_loadstring("\27LJ\2\nD\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\27custom.plugins.null-ls\frequire\0", "config", "null-ls.nvim")
 
+vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
