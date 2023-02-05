@@ -61,10 +61,3 @@ end
 for k, v in pairs(globals) do
 	vim.g[k] = v
 end
-
-local g = vim.g
-
--- Emmet
-g.emmet_debug = 1
-g.user_emmet_mode = "a"
-g.user_emmet_leader_key = ","

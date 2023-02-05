@@ -195,6 +195,30 @@ require("telescope").setup({
 				["<C-d>"] = false,
 			},
 		},
+		vimgrep_arguments = {
+			"rg",
+			"--color=never",
+			"--no-heading",
+			"--with-filename",
+			"--line-number",
+			"--column",
+			"--smart-case",
+			"--fixed-strings",
+			"-u",
+		},
+		file_ignore_patterns = {
+			"node_modules/",
+			".yarn/",
+			".git/",
+			".github/",
+			"build/",
+			"log/",
+			"yarn.lock",
+			"ios/Pods/",
+		},
+		pickers = {
+			current_buffer_fuzzy_find = { sorting_strategy = "ascending" },
+		},
 	},
 })
 
@@ -342,7 +366,7 @@ local servers = {
 	-- gopls = {},
 	-- pyright = {},
 	-- rust_analyzer = {},
-	-- tsserver = {},
+	tsserver = {},
 
 	sumneko_lua = {
 		Lua = {
@@ -377,6 +401,31 @@ mason_lspconfig.setup_handlers({
 			settings = servers[server_name],
 		})
 	end,
+})
+
+vim.diagnostic.config({
+	underline = true,
+	update_in_insert = false,
+	severity_sort = true,
+	virtual_text = false,
+	float = {
+		source = "always",
+		border = "rounded",
+		format = function(diagnostic)
+			if diagnostic.source == "eslint" then
+				return string.format(
+					"%s [%s]",
+					diagnostic.message,
+					-- shows the name of the rule
+					diagnostic.user_data.lsp.code
+				)
+			end
+			return string.format("%s [%s]", diagnostic.message, diagnostic.source)
+		end,
+		severity_sort = true,
+		close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+		max_width = 80,
+	},
 })
 
 -- Turn on lsp status information

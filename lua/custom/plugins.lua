@@ -53,4 +53,23 @@ return function(use)
 		"akinsho/git-conflict.nvim",
 		config = "require('custom.plugins.git-conflict')",
 	})
+
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup({})
+		end,
+	})
+
+	use({ "junegunn/fzf", run = ":call fzf#install()" })
+	use({ "junegunn/fzf.vim" })
+
+	use({
+		"mattn/emmet-vim",
+		config = function()
+			vim.g.user_emmet_mode = "a"
+			vim.g.user_emmet_leader_key = ","
+		end,
+	})
 end

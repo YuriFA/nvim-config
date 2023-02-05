@@ -5,7 +5,6 @@ local sources = {
 	null_ls.builtins.formatting.prettier.with({
 		filetypes = {
 			"html",
-			"json",
 			"markdown",
 			"scss",
 			"css",
@@ -28,6 +27,7 @@ local sources = {
 		--       or vim.fn.executable(params.command) == 1 and params.command
 		-- end,
 	}),
+	null_ls.builtins.formatting.uncrustify,
 }
 
 local M = {}
