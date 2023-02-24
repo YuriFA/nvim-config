@@ -45,7 +45,7 @@ require('bufferline').setup {
     separator_style = "slant", -- | "thick" | "thin" | { 'any', 'any' },
     enforce_regular_tabs = false,
     always_show_bufferline = true,
-    sort_by = 'insert_at_end', -- | 'insert_at_end' | 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs'
+    sort_by = 'directory', -- | 'insert_at_end' | 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs'
     highlights = {
       fill = {
         background = "#FF0000",

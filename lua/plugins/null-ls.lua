@@ -1,5 +1,4 @@
 local ok, null_ls = pcall(require, "null-ls")
-local command_resolver = require("null-ls.helpers.command_resolver")
 
 if not ok then
   return

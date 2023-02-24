@@ -189,7 +189,7 @@ _G.packer_plugins = {
     loaded = true,
     only_config = true,
     path = "/Users/yuri/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
-    url = "https://github.com/williamboman/nvim-lspconfig"
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
     config = { "require('plugins.nvimtree')" },
@@ -295,14 +295,14 @@ time([[Config for nvim-cmp]], false)
 time([[Config for nvim-colorizer.lua]], true)
 require('plugins.colorizer')
 time([[Config for nvim-colorizer.lua]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require('plugins.treesitter')
-time([[Config for nvim-treesitter]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
 require('plugins.lsp')
 time([[Config for nvim-lspconfig]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require('plugins.treesitter')
+time([[Config for nvim-treesitter]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 require('plugins.nvimtree')

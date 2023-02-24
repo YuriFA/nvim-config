@@ -54,10 +54,14 @@ keymap("n", "<C-n>", ":NvimTreeToggle <CR>", { noremap = true, silent = true })
 -- vim.cmd "source ~/.config/nvim/keymappings-coc.vim"
 
 -- LSP
-keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
-keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
-keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
-keymap("n", "gi", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { noremap = true, silent = true })
+-- keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+keymap("n", "gd", "<cmd>lua require'telescope.builtin'.lsp_definitions()<CR>", { noremap = true, silent = true })
+-- keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
+keymap("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references()<CR>", { noremap = true, silent = true })
+-- keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
+keymap("n", "gi", "<cmd>lua require'telescope.builtin'.lsp_implementations()<CR>", { noremap = true, silent = true })
+-- keymap("n", "gy", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { noremap = true, silent = true })
+keymap("n", "gy", "<cmd>lua require'telescope.builtin'.lsp_type_definitions()<CR>", { noremap = true, silent = true })
 keymap("n", "<leader>ac", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, silent = true })
 keymap("v", "<leader>ac", "<cmd>'<,'>lua vim.lsp.buf.range_code_action()<CR>", { noremap = true, silent = true })
 -- keymap("n", "<Leader>ac", "<cmd>lua require'telescope.builtin'.lsp_code_actions()<CR>", { noremap = true, silent = true })
