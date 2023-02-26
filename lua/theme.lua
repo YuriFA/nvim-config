@@ -1,9 +1,14 @@
 M = {}
 
 M.codedark = function()
-  vim.o.background = 'dark'
-  vim.cmd("colorscheme codedark")
+	vim.o.background = "dark"
+	vim.cmd("colorscheme codedark")
 end
+
+-- M.catpucchin = function()
+-- 	vim.o.background = "dark"
+-- 	vim.cmd("colorscheme catppuccin-macchiato")
+-- end
 
 M.codedark()
 

@@ -96,6 +96,19 @@ mason_lspconfig.setup_handlers({
 		})
 	end,
 
+	["tailwindcss"] = function()
+		lspconfig.svelte.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			root_dir = require("lspconfig.util").root_pattern(
+				"tailwind.config.js",
+				"tailwind.config.ts",
+				"postcss.config.js",
+				"postcss.config.ts"
+			),
+		})
+	end,
+
 	-- svelte + typescript
 	-- requires manual implementation of typescript-svelte-plugin for every project
 	-- npm i --save-dev typescript-svelte-plugin
@@ -113,10 +126,23 @@ mason_lspconfig.setup_handlers({
 			capabilities = capabilities,
 			on_attach = function(client, buffer)
 				on_attach(client, buffer)
-        client.server_capabilities.completionProvider.triggerCharacters = {
-          ".", '"', "'", "`", "/", "@", "*", "#",
-          "$", "+", "^", "(", "[", "-", ":",
-        }
+				client.server_capabilities.completionProvider.triggerCharacters = {
+					".",
+					'"',
+					"'",
+					"`",
+					"/",
+					"@",
+					"*",
+					"#",
+					"$",
+					"+",
+					"^",
+					"(",
+					"[",
+					"-",
+					":",
+				}
 			end,
 			settings = {
 				plugin = {
@@ -130,6 +156,8 @@ mason_lspconfig.setup_handlers({
 
 	["lua_ls"] = function()
 		lspconfig.lua_ls.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
 			settings = servers["lua_ls"],
 		})
 	end,

@@ -52,11 +52,23 @@ telescope.setup({
 		-- Developer configurations: Not meant for general override
 		buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
 	},
-  pickers = {
-    find_files = {
-      theme = "dropdown",
-    }
-  },
+	pickers = {
+		find_files = {
+			theme = "dropdown",
+			previewer = false,
+			layout_config = {
+				preview_cutoff = 1, -- Preview should always show (unless previewer = false)
+
+				width = function(_, max_columns, _)
+					return math.min(max_columns, 80)
+				end,
+
+				height = function(_, _, max_lines)
+					return math.min(max_lines, 30)
+				end,
+			},
+		},
+	},
 	-- extensions = {
 	-- 	["ui-select"] = {
 	-- 		require("telescope.themes").get_dropdown({
@@ -74,7 +86,7 @@ local extensions = {
 	-- 	prefer_locations = true, -- always use Telescope locations to preview definitions/declarations/implementations etc
 	-- },
 	"fzf",
-  -- "ui-select"
+	-- "ui-select"
 }
 
 pcall(function()

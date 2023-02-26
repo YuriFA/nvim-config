@@ -20,7 +20,9 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
+	-- colorschemes
 	use("tomasiser/vim-code-dark")
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	use("nvim-lua/plenary.nvim")
 	use("mattn/emmet-vim")
@@ -88,7 +90,7 @@ return require("packer").startup(function(use)
 
 	-- LSP Base
 	use({
-		'neovim/nvim-lspconfig',
+		"neovim/nvim-lspconfig",
 		requires = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
