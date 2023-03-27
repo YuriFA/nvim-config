@@ -64,12 +64,26 @@ return require("packer").startup(function(use)
 
 	use({
 		"nvim-telescope/telescope.nvim",
-		cmd = "Telescope",
+		-- cmd = "Telescope",
 		requires = { "nvim-lua/plenary.nvim" },
 		config = "require('plugins.telescope')",
 	})
 	-- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make", cond = vim.fn.executable("make") == 1 })
+
+	use({
+		"princejoogie/dir-telescope.nvim",
+		-- telescope.nvim is a required dependency
+		requires = { "nvim-telescope/telescope.nvim" },
+		config = function()
+			require("dir-telescope").setup({
+				-- these are the default options set
+				hidden = true,
+				no_ignore = false,
+				show_preview = true,
+			})
+		end,
+	})
 
 	-- interface of ui.select ui.input
 	use({ "stevearc/dressing.nvim", config = "require('plugins.dressing')" })

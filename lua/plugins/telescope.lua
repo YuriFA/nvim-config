@@ -87,6 +87,7 @@ local extensions = {
 	-- },
 	"fzf",
 	-- "ui-select"
+	"dir",
 }
 
 pcall(function()
