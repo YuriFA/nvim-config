@@ -1,37 +1,38 @@
 local ok, null_ls = pcall(require, "null-ls")
 
 if not ok then
-  return
+	return
 end
 
 local sources = {
-  null_ls.builtins.formatting.stylua,
-  null_ls.builtins.formatting.prettier.with {
-    filetypes = {
-      "html",
-      "json",
-      "markdown",
-      "scss",
-      "css",
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact",
-      'svelte',
-      'yaml',
-      'markdown',
-      'markdown.mdx',
-    },
-  },
+	null_ls.builtins.formatting.stylua,
+	null_ls.builtins.formatting.prettier.with({
+		filetypes = {
+			"html",
+			"json",
+			"markdown",
+			"scss",
+			"css",
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+			"svelte",
+			"yaml",
+			"markdown",
+			"markdown.mdx",
+		},
+	}),
+	require("typescript.extensions.null-ls.code-actions"),
 }
 
 local M = {}
 M.setup = function()
-  null_ls.setup {
-    debug = true,
-    sources = sources,
-    diagnostics_format = "[#{c}] #{m} (#{s})"
-  }
+	null_ls.setup({
+		debug = true,
+		sources = sources,
+		diagnostics_format = "[#{c}] #{m} (#{s})",
+	})
 end
 
 return M

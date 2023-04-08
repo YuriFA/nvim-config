@@ -7,8 +7,8 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
 vim.diagnostic.config({
@@ -100,6 +100,21 @@ mason_lspconfig.setup_handlers({
 			capabilities = capabilities,
 			on_attach = on_attach,
 			settings = servers[server_name],
+		})
+	end,
+
+	["tsserver"] = function()
+		require("typescript").setup({
+			disable_commands = false, -- prevent the plugin from creating Vim commands
+			debug = false, -- enable debug logging for commands
+			go_to_source_definition = {
+				fallback = true, -- fall back to standard LSP definition on failure
+			},
+			server = { -- pass options to lspconfig's setup method
+				capabilities = capabilities,
+				on_attach = on_attach,
+				settings = servers["tsserver"],
+			},
 		})
 	end,
 

@@ -102,6 +102,8 @@ return require("packer").startup(function(use)
 		config = "require('plugins.cmp')",
 	})
 
+	use({ "jose-elias-alvarez/typescript.nvim" })
+
 	-- LSP Base
 	use({
 		"neovim/nvim-lspconfig",
