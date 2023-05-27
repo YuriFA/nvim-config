@@ -29,7 +29,7 @@ keymap("n", "<leader>fc", ":Commits<CR>", { noremap = true, silent = true })
 
 -- TELESCOPE
 keymap("n", "<leader>ff", ":Telescope find_files hidden=true<CR>", { noremap = true, silent = true })
-keymap("n", "<leader>fa", ":Telescope live_grep debounce=100<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>fa", ":Telescope live_grep debounce=500<CR>", { noremap = true, silent = true })
 
 ---@diagnostic disable-next-line: lowercase-global
 function grep_search_with_ignore()
