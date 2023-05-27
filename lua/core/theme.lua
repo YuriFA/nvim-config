@@ -10,7 +10,17 @@ end
 -- 	vim.cmd("colorscheme catppuccin-macchiato")
 -- end
 
-M.codedark()
+function M.setup()
+	M.codedark()
 
-vim.api.nvim_set_hl(0, 'DiffText', { fg = "#ffffff", bg = "#1d3b40" })
-vim.api.nvim_set_hl(0, 'DiffAdd', { fg = "#ffffff", bg = "#1d3450" })
+	vim.api.nvim_set_hl(0, "DiffText", {
+		fg = "#ffffff",
+		bg = "#1d3b40",
+	})
+	vim.api.nvim_set_hl(0, "DiffAdd", {
+		fg = "#ffffff",
+		bg = "#1d3450",
+	})
+end
+
+return M
