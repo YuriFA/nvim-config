@@ -1,6 +1,6 @@
 local plugins = {
 	{ "tomasiser/vim-code-dark" },
-	{ "catppuccin/nvim", name = "catppuccin" },
+	-- { "catppuccin/nvim", name = "catppuccin" },
 
 	{ "nvim-lua/plenary.nvim" },
 	{ "mattn/emmet-vim" },

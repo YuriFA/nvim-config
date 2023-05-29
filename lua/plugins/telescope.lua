@@ -24,7 +24,7 @@ return {
 					initial_mode = "insert",
 					selection_strategy = "reset",
 					sorting_strategy = "ascending",
-					layout_strategy = "horizontal",
+					-- layout_strategy = "horizontal",
 					-- layout_config = {
 					-- 	horizontal = {
 					-- 		prompt_position = "top",
@@ -79,23 +79,20 @@ return {
 							end,
 						},
 					},
+					live_grep = {
+						layout_strategy = "vertical",
+						layout_config = {
+              horizontal = { width = 0.9, height = 0.9 },
+							vertical = { width = 0.9, height = 0.9 },
+						},
+					},
 				},
-				-- extensions = {
-				-- 	["ui-select"] = {
-				-- 		require("telescope.themes").get_dropdown({
-				-- 			-- even more opts
-				-- 		}),
-				-- 	},
-				-- },
 			})
 
 			local extensions = {
 				"themes",
-				"terms", -- coc = {
-				-- 	theme = "ivy",
-				-- 	prefer_locations = true, -- always use Telescope locations to preview definitions/declarations/implementations etc
-				-- },
-				"fzf", -- "ui-select"
+				"terms",
+				"fzf",
 				"dir",
 			}
 

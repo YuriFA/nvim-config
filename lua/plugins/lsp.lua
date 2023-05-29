@@ -1,5 +1,6 @@
 return { -- LSP Base
 	{ "jose-elias-alvarez/typescript.nvim" },
+
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
@@ -23,6 +24,7 @@ return { -- LSP Base
 				Hint = " ",
 				Info = " ",
 			}
+
 			for type, icon in pairs(signs) do
 				local hl = "DiagnosticSign" .. type
 				vim.fn.sign_define(hl, {
@@ -77,18 +79,14 @@ return { -- LSP Base
 				},
 			}
 
-			-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-			-- Setup mason so it can manage external tooling
 			require("mason").setup()
 
-			-- Ensure the servers above are installed
 			local mason_lspconfig = require("mason-lspconfig")
 
 			mason_lspconfig.setup({
-				-- ensure_installed = vim.tbl_keys(servers),
 				ensure_installed = { "eslint", "marksman", "lua_ls", "tsserver" },
 				automatic_installation = true,
 			})
@@ -113,7 +111,6 @@ return { -- LSP Base
 				client.server_capabilities.documentFormattingProvider = enable
 			end
 
-			-- Setup neovim lua configuration
 			require("neodev").setup()
 
 			local lspconfig = require("lspconfig")
@@ -135,68 +132,10 @@ return { -- LSP Base
 							fallback = true, -- fall back to standard LSP definition on failure
 						},
 						server = {
-							-- pass options to lspconfig's setup method
 							capabilities = capabilities,
 							on_attach = on_attach,
 							settings = servers["tsserver"],
 						},
-					})
-				end,
-
-				-- ["tailwindcss"] = function()
-				-- 	lspconfig.svelte.setup({
-				-- 		capabilities = capabilities,
-				-- 		on_attach = on_attach,
-				-- 		root_dir = require("lspconfig.util").root_pattern(
-				-- 			"tailwind.config.cjs",
-				-- 			"tailwind.config.js",
-				-- 			"tailwind.config.ts",
-				-- 			"postcss.config.cjs",
-				-- 			"postcss.config.js",
-				-- 			"postcss.config.ts"
-				-- 		),
-				-- 	})
-				-- end,
-
-				-- svelte + typescript
-				-- requires manual implementation of typescript-svelte-plugin for every project
-				-- npm i --save-dev typescript-svelte-plugin
-				-- Then add it to tsconfig.json
-				-- {
-				--    "compilerOptions": {
-				--      ...
-				--      "plugins": [{
-				--        "name": "typescript-svelte-plugin"
-				--      }]
-				--    }
-				-- }
-				["svelte"] = function()
-					lspconfig.svelte.setup({
-						capabilities = capabilities,
-						on_attach = function(client, buffer)
-							on_attach(client, buffer)
-							client.server_capabilities.completionProvider.triggerCharacters =
-								{ ".", '"', "'", "`", "/", "@", "*", "#", "$", "+", "^", "(", "[", "-", ":" }
-						end,
-						settings = {
-							plugin = {
-								svelte = {
-									format = {
-										config = {
-											svelteStrictMode = true,
-										},
-									},
-								},
-							},
-						},
-					})
-				end,
-
-				["lua_ls"] = function()
-					lspconfig.lua_ls.setup({
-						capabilities = capabilities,
-						on_attach = on_attach,
-						settings = servers["lua_ls"],
 					})
 				end,
 			})
@@ -205,6 +144,7 @@ return { -- LSP Base
 			require("fidget").setup()
 		end,
 	},
+
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
