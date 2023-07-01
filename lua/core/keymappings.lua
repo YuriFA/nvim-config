@@ -178,10 +178,10 @@ function M.setup()
 	-- keymap("n", "<leader>pd", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })
 
 	-- -- NVIM TREE
-	-- keymap("n", "<C-n>", ":NvimTreeToggle <CR>", {
-	-- 	noremap = true,
-	-- 	silent = true,
-	-- })
+	keymap("n", "<C-n>", ":NvimTreeToggle <CR>", {
+		noremap = true,
+		silent = true,
+	})
 
 	-- COC
 	-- keymap("n", "<leader>l", ":CocCommand eslint.executeAutofix<CR>", {})
