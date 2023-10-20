@@ -1,6 +1,6 @@
 local plugins = {
 	{ "tomasiser/vim-code-dark" },
-	-- { "catppuccin/nvim", name = "catppuccin" },
+	{ "catppuccin/nvim", name = "catppuccin" },
 
 	{ "nvim-lua/plenary.nvim" },
 	{ "mattn/emmet-vim" },
@@ -19,6 +19,8 @@ local plugins = {
 
 	-- use { 'neoclide/coc.nvim', branch = 'release' }
 	-- use { 'fannheyward/telescope-coc.nvim' }
+
+	{ "j-hui/fidget.nvim", tag = "legacy" }, -- Additional lua configuration, makes nvim stuff amazing
 
 	{ "slim-template/vim-slim" },
 

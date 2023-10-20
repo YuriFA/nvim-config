@@ -5,3 +5,4 @@ au BufNewFile,BufRead Pluginfile set ft=ruby
 au BufNewFile,BufRead Matchfile set ft=ruby
 au BufNewFile,BufRead Snapfile set ft=ruby
 au BufNewFile,BufRead Scanfile set ft=ruby
+au BufNewFile,BufRead Appfile set ft=ruby

@@ -232,7 +232,7 @@ function M.setup()
 		silent = true,
 	})
 	-- keymap("n", "<Leader>ac", "<cmd>lua require'telescope.builtin'.lsp_code_actions()<CR>", { noremap = true, silent = true })
-	keymap("n", "gI", ":TypescriptRenameFile<CR>", {
+	keymap("n", "<leader>mv", ":TypescriptRenameFile<CR>", {
 		noremap = true,
 		silent = true,
 	})

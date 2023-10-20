@@ -5,10 +5,10 @@ M.codedark = function()
 	vim.cmd("colorscheme codedark")
 end
 
--- M.catpucchin = function()
--- 	vim.o.background = "dark"
--- 	vim.cmd("colorscheme catppuccin-macchiato")
--- end
+M.catpucchin = function()
+	vim.o.background = "dark"
+	vim.cmd("colorscheme catppuccin-macchiato")
+end
 
 function M.setup()
 	M.codedark()

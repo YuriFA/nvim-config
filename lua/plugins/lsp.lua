@@ -114,7 +114,6 @@ return { -- LSP Base
 			require("neodev").setup()
 
 			local lspconfig = require("lspconfig")
-			local util = require("lspconfig.util")
 
 			mason_lspconfig.setup_handlers({
 				function(server_name)
@@ -140,23 +139,20 @@ return { -- LSP Base
 					})
 				end,
 
-				["ruby_ls"] = function()
-					local enabled_features = {
-						"documentHighlights",
-						"documentSymbols",
-						"foldingRanges",
-						"selectionRanges",
-						-- "semanticHighlighting",
-						"formatting",
-						"codeActions",
-					}
+				["solargraph"] = function()
+					-- local enabled_features = {
+					-- 	"documentHighlights",
+					-- 	"documentSymbols",
+					-- 	"foldingRanges",
+					-- 	"selectionRanges",
+					-- 	-- "semanticHighlighting",
+					-- 	"formatting",
+					-- 	"codeActions",
+					-- }
 
-					lspconfig.ruby_ls.setup({
-						cmd = { "bundle", "exec", "ruby-lsp" },
-						filetypes = { "ruby" },
-						root_dir = util.root_pattern("Gemfile", ".git"),
+					lspconfig.solargraph.setup({
 						init_options = {
-							enabledFeatures = enabled_features,
+							-- enabledFeatures = enabled_features,
 						},
 						settings = {},
 					})
