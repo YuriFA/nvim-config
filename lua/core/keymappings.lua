@@ -86,7 +86,7 @@ function M.setup()
 		noremap = true,
 		silent = true,
 	})
-	keymap("n", "<leader>fa", ":Telescope live_grep debounce=500<CR>", {
+	keymap("n", "<leader>fa", ":Telescope live_grep<CR>", {
 		noremap = true,
 		silent = true,
 	})

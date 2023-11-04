@@ -1,6 +1,7 @@
 local plugins = {
 	{ "tomasiser/vim-code-dark" },
 	{ "catppuccin/nvim", name = "catppuccin" },
+	{ "metalelf0/jellybeans-nvim", dependencies = "rktjmp/lush.nvim"},
 
 	{ "nvim-lua/plenary.nvim" },
 	{ "mattn/emmet-vim" },
