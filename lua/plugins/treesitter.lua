@@ -16,11 +16,6 @@ return {
 					"html",
 				}, --  "all", "maintained" or a list
 				ignore_install = {}, -- List of parsers to ignore installing
-				highlight = {
-					enable = true, -- false will disable the whole extension
-					disable = { "vim", "help" },
-					additional_vim_regex_highlighting = false,
-				},
 				incremental_selection = {
 					enable = true,
 					keymaps = {
@@ -29,12 +24,6 @@ return {
 						node_decremental = "grN",
 						scope_incremental = "grc",
 					},
-				},
-				indent = {
-					enable = false,
-				},
-				matchup = {
-					enable = true,
 				},
 				textobjects = {
 					select = {
@@ -101,30 +90,6 @@ return {
 					enable = true,
 				},
 			})
-
-			-- Folding
-			vim.o.foldmethod = "expr"
-			vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-
-			--  @block.inner
-			--  @block.outer
-			--  @call.inner
-			--  @call.outer
-			--  @class.inner
-			--  @class.outer
-			--  @comment.outer
-			--  @conditional.inner
-			--  @conditional.outer
-			--  @frame.inner
-			--  @frame.outer
-			--  @function.inner
-			--  @function.outer
-			--  @loop.inner
-			--  @loop.outer
-			--  @parameter.inner
-			--  @parameter.outer
-			--  @scopename.inner
-			--  @statement.outer
 		end,
 		build = ":TSUpdate",
 	},
