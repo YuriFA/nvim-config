@@ -1,5 +1,25 @@
 return { -- LSP Base
-	{ "jose-elias-alvarez/typescript.nvim" },
+	-- { "jose-elias-alvarez/typescript.nvim" },
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		ft = {
+			"typescript",
+			"typescriptreact",
+			"typescript.tsx",
+			"javascript",
+			"javascriptreact",
+			"javascript.jsx",
+		},
+		opts = {},
+		-- config = function()
+		-- 	require("typescript-tools").setup({
+		-- 		settings = {
+		-- 			separate_diagnostic_server = false,
+		-- 		},
+		-- 	})
+		-- end,
+	},
 
 	{
 		"neovim/nvim-lspconfig",
@@ -59,7 +79,7 @@ return { -- LSP Base
 
 			local servers = {
 				eslint = {},
-				tsserver = {},
+				-- tsserver = {},
 				lua_ls = {
 					Lua = {
 						diagnostics = {
@@ -87,7 +107,7 @@ return { -- LSP Base
 			local mason_lspconfig = require("mason-lspconfig")
 
 			mason_lspconfig.setup({
-				ensure_installed = { "eslint", "marksman", "lua_ls", "tsserver" },
+				ensure_installed = { "eslint", "marksman", "lua_ls" }, -- , "tsserver" },
 				automatic_installation = true,
 			})
 
@@ -124,20 +144,20 @@ return { -- LSP Base
 					})
 				end,
 
-				["tsserver"] = function()
-					require("typescript").setup({
-						disable_commands = false, -- prevent the plugin from creating Vim commands
-						debug = false, -- enable debug logging for commands
-						go_to_source_definition = {
-							fallback = true, -- fall back to standard LSP definition on failure
-						},
-						server = {
-							capabilities = capabilities,
-							on_attach = on_attach,
-							settings = servers["tsserver"],
-						},
-					})
-				end,
+				-- ["tsserver"] = function()
+				-- 	require("typescript").setup({
+				-- 		disable_commands = false, -- prevent the plugin from creating Vim commands
+				-- 		debug = false, -- enable debug logging for commands
+				-- 		go_to_source_definition = {
+				-- 			fallback = true, -- fall back to standard LSP definition on failure
+				-- 		},
+				-- 		server = {
+				-- 			capabilities = capabilities,
+				-- 			on_attach = on_attach,
+				-- 			settings = servers["tsserver"],
+				-- 		},
+				-- 	})
+				-- end,
 
 				["solargraph"] = function()
 					-- local enabled_features = {
@@ -183,13 +203,12 @@ return { -- LSP Base
 						"javascriptreact",
 						"typescript",
 						"typescriptreact",
-						"svelte",
 						"yaml",
 						"markdown",
 						"markdown.mdx",
 					},
 				}),
-				require("typescript.extensions.null-ls.code-actions"),
+				-- require("typescript.extensions.null-ls.code-actions"),
 			}
 
 			null_ls.setup({
