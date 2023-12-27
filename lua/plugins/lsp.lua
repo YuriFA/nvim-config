@@ -12,13 +12,25 @@ return { -- LSP Base
 			"javascript.jsx",
 		},
 		opts = {},
-		-- config = function()
-		-- 	require("typescript-tools").setup({
-		-- 		settings = {
-		-- 			separate_diagnostic_server = false,
-		-- 		},
-		-- 	})
-		-- end,
+		config = function()
+			require("typescript-tools").setup({
+				on_attach = function(client)
+					client.server_capabilities.documentFormattingProvider = false
+					client.server_capabilities.documentRangeFormattingProvider = false
+					-- client.server_capabilities.semanticTokensProvider = nil
+				end,
+				settings = {
+					-- tsserver_max_memory = 8092,
+					separate_diagnostic_server = false,
+					tsserver_file_preferences = {
+						includeInlayEnumMemberValueHints = true,
+						includeInlayFunctionLikeReturnTypeHints = true,
+						includeInlayVariableTypeHints = true,
+					},
+					-- code_lens = "all",
+				},
+			})
+		end,
 	},
 
 	{
@@ -129,6 +141,8 @@ return { -- LSP Base
 				end
 
 				client.server_capabilities.documentFormattingProvider = enable
+				client.server_capabilities.documentRangeFormattingProvider = enable
+				-- client.server_capabilities.semanticTokensProvider = nil
 			end
 
 			require("neodev").setup()

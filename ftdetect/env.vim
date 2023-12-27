@@ -1,1 +1,1 @@
-au BufNewFile,BufRead .env* set ft=conf
+au BufNewFile,BufRead .env* set ft=bash

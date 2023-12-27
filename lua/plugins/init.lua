@@ -1,5 +1,7 @@
 local plugins = {
 	{ "tomasiser/vim-code-dark" },
+  { "navarasu/onedark.nvim" },
+  { 'projekt0n/github-nvim-theme' },
 
 	{ "nvim-lua/plenary.nvim" },
 	{ "mattn/emmet-vim" },
