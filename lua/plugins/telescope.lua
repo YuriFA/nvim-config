@@ -24,6 +24,10 @@ return {
 					initial_mode = "insert",
 					selection_strategy = "reset",
 					sorting_strategy = "ascending",
+					preview = {
+						filesize_limit = 1,
+						treesitter = false,
+					},
 					-- layout_strategy = "horizontal",
 					-- layout_config = {
 					-- 	horizontal = {
@@ -47,21 +51,22 @@ return {
 						"build/",
 						"log/",
 						"yarn.lock",
+						".next/",
 					},
 					-- generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-					path_display = { "truncate" },
+					-- path_display = { "truncate" },
 					-- winblend = 0,
 					-- border = {},
 					-- borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 					color_devicons = true,
-					set_env = {
-						["COLORTERM"] = "truecolor",
-					}, -- default = nil,
-					file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-					grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-					qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+					-- set_env = {
+					-- 	["COLORTERM"] = "truecolor",
+					-- }, 
+					-- file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+					-- grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+					-- qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
 					-- Developer configurations: Not meant for general override
-					buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
+					-- buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
 				},
 				pickers = {
 					find_files = {
@@ -79,13 +84,13 @@ return {
 							end,
 						},
 					},
-					live_grep = {
-						layout_strategy = "vertical",
-						layout_config = {
-              horizontal = { width = 0.9, height = 0.9 },
-							vertical = { width = 0.9, height = 0.9 },
-						},
-					},
+					-- live_grep = {
+					-- 	layout_strategy = "vertical",
+					-- 	layout_config = {
+					-- horizontal = { width = 0.9, height = 0.9 },
+					-- 		vertical = { width = 0.9, height = 0.9 },
+					-- 	},
+					-- },
 				},
 			})
 
@@ -116,7 +121,7 @@ return {
 			require("dir-telescope").setup({
 				-- these are the default options set
 				hidden = true,
-				no_ignore = false,
+				no_ignore = true,
 				show_preview = true,
 			})
 		end,

@@ -172,6 +172,37 @@ return { -- LSP Base
 				-- 		},
 				-- 	})
 				-- end,
+				["tailwindcss"] = function()
+					lspconfig.tailwindcss.setup({
+						settings = {
+							tailwindCSS = {
+								lint = {
+									cssConflict = "ignore",
+								},
+								experimental = {
+									classRegex = {
+										{ "[a-zA-Z]*ClassName='([^']+)'" },
+										{ '[a-zA-Z]*ClassName="([^"]+)"' },
+										{ "[a-zA-Z]*ClassName={`([^`]+)`}" },
+										{ "classNames={{([^}]*)}}" },
+										{
+											"(?:cn|cva|cx)\\(([^)(]*(?:\\([^)(]*(?:\\([^)(]*(?:\\([^)(]*\\)[^)(]*)*\\)[^)(]*)*\\)[^)(]*)*)\\)",
+											"'([^']*)'",
+										},
+										{
+											"(?:cn|cva|cx)\\(([^)(]*(?:\\([^)(]*(?:\\([^)(]*(?:\\([^)(]*\\)[^)(]*)*\\)[^)(]*)*\\)[^)(]*)*)\\)",
+											'"([^"]*)"',
+										},
+										{
+											"(?:cn|cva|cx)\\(([^)(]*(?:\\([^)(]*(?:\\([^)(]*(?:\\([^)(]*\\)[^)(]*)*\\)[^)(]*)*\\)[^)(]*)*)\\)",
+											"`([^`]*)`",
+										},
+									},
+								},
+							},
+						},
+					})
+				end,
 
 				["solargraph"] = function()
 					-- local enabled_features = {
