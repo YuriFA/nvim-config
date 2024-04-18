@@ -60,17 +60,6 @@ return {
     },
   },
 
-  -- animations
-  -- {
-  --   "echasnovski/mini.animate",
-  --   event = "VeryLazy",
-  --   opts = function(_, opts)
-  --     opts.scroll = {
-  --       enable = false,
-  --     }
-  --   end,
-  -- },
-
   -- buffer line
   {
     "akinsho/bufferline.nvim",
@@ -81,4 +70,10 @@ return {
       },
     },
   },
+
+  -- for disable scope line animation
+  -- {
+  --   enabled = false,
+  -- "echasnovski/mini.indentscope",
+  -- }
 }

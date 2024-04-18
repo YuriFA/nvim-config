@@ -6,7 +6,7 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- save file
-keymap.set({ "i", "x", "n", "s" }, "<leader>w", "<cmd>w<cr><esc>", { desc = "Save File" })
+keymap.set("n", "<leader>w", "<cmd>w<cr><esc>", opts)
 
 -- buffers
 keymap.set("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
@@ -29,3 +29,11 @@ end
 keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 keymap.set("n", "]g", diagnostic_goto(true), { desc = "Next Diagnostic" })
 keymap.set("n", "[g", diagnostic_goto(false), { desc = "Prev Diagnostic" })
+
+-- Typscript tools
+keymap.set("n", "<leader>mv", ":TSToolsRenameFile<CR>", opts)
+
+-- FZF
+keymap.set("n", "<leader>fw", ":Rg<CR>", opts)
+-- for disable double esc bug when using Rg
+keymap.del("t", "<esc><esc>")

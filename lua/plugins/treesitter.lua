@@ -1,11 +1,18 @@
 return {
-  -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   opts = {
-  --     highlight = {
-  --       enable = false,
-  --       additional_vim_regex_highlighting = false,
-  --     },
-  --   },
-  -- },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "json",
+        "html",
+        "css",
+        "scss",
+        "graphql",
+        "javascript",
+        "typescript",
+        "tsx",
+      },
+    },
+  },
 }
