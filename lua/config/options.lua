@@ -12,3 +12,13 @@ vim.g.autoformat = false
 local opt = vim.opt
 
 opt.wrap = true -- Disable line wrap
+
+-- FOR git-conflict
+vim.api.nvim_set_hl(0, "DiffText", {
+  fg = "#ffffff",
+  bg = "#1d3b40",
+})
+vim.api.nvim_set_hl(0, "DiffAdd", {
+  fg = "#ffffff",
+  bg = "#1d3450",
+})
