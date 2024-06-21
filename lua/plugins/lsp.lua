@@ -169,6 +169,9 @@ return {
         end,
         vtsls = function(_, opts)
           LazyVim.lsp.on_attach(function(client, buffer)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+
             client.commands["_typescript.moveToFileRefactoring"] = function(command, ctx)
               ---@type string, string, lsp.Range
               local action, uri, range = unpack(command.arguments)
