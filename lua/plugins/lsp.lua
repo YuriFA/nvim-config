@@ -1,17 +1,4 @@
 return {
-  -- {
-  --   "williamboman/mason-lspconfig.nvim",
-  --   opts = {
-  --     handlers = {
-  --       function(server_name)
-  --         if server_name == "tsserver" then
-  --           return
-  --         end
-  --       end,
-  --     },
-  --   },
-  -- },
-
   {
     "olrtg/nvim-emmet",
     config = function()
@@ -19,48 +6,10 @@ return {
     end,
   },
 
-  -- Old emmet
-  -- { "mattn/emmet-vim" },
-
-  -- {
-  --   "pmizio/typescript-tools.nvim",
-  --   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-  --   ft = {
-  --     "typescript",
-  --     "typescriptreact",
-  --     "typescript.tsx",
-  --     "javascript",
-  --     "javascriptreact",
-  --     "javascript.jsx",
-  --   },
-  --   opts = {},
-  --   config = function()
-  --     require("typescript-tools").setup({
-  --       on_attach = function(client)
-  --         client.server_capabilities.documentFormattingProvider = false
-  --         client.server_capabilities.documentRangeFormattingProvider = false
-  --       end,
-  --       settings = {
-  --         separate_diagnostic_server = true,
-  --         tsserver_file_preferences = {
-  --           includePackageJsonAutoImports = "on",
-  --           includeInlayEnumMemberValueHints = true,
-  --           includeInlayFunctionLikeReturnTypeHints = true,
-  --           includeInlayVariableTypeHints = true,
-  --
-  --           includeInlayParameterNameHints = "all",
-  --           includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-  --           includeInlayFunctionParameterTypeHints = true,
-  --           includeInlayPropertyDeclarationTypeHints = true,
-  --         },
-  --       },
-  --     })
-  --   end,
-  -- },
-
   {
     "neovim/nvim-lspconfig",
     opts = {
+      inlay_hints = { enabled = false },
       -- make sure mason installs the server
       servers = {
         tsserver = {

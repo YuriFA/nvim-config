@@ -30,9 +30,6 @@ keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnost
 keymap.set("n", "]g", diagnostic_goto(true), { desc = "Next Diagnostic" })
 keymap.set("n", "[g", diagnostic_goto(false), { desc = "Prev Diagnostic" })
 
--- Typscript tools
-keymap.set("n", "<leader>mv", ":TSToolsRenameFile<CR>", opts)
-
 -- FZF
 keymap.set("n", "<leader>fw", ":Rg<CR>", opts)
 -- for disable double esc bug when using Rg
