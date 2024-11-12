@@ -15,6 +15,9 @@ return {
         tsserver = {
           enabled = false,
         },
+        ts_ls = {
+          enabled = false,
+        },
         vtsls = {
           -- explicitly add default filetypes, so that we can extend
           -- them in related extras
@@ -113,6 +116,10 @@ return {
       },
       setup = {
         tsserver = function()
+          -- disable tsserver
+          return true
+        end,
+        ts_ls = function()
           -- disable tsserver
           return true
         end,
