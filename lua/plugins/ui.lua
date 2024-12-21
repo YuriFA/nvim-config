@@ -64,16 +64,58 @@ return {
   {
     "akinsho/bufferline.nvim",
     event = "VeryLazy",
+    keys = {
+      { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
+      { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
+    },
     opts = {
       options = {
         always_show_bufferline = true,
+        show_buffer_close_icons = false,
+        show_close_icon = false,
       },
     },
   },
 
-  -- for disable scope line animation
-  -- {
-  --   enabled = false,
-  -- "echasnovski/mini.indentscope",
-  -- }
+  -- snacks
+  {
+    "snacks.nvim",
+    opts = {
+      scroll = { enabled = false },
+    },
+  },
+
+  -- statusline
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = function(_, opts)
+      local LazyVim = require("lazyvim.util")
+      opts.sections.lualine_c[4] = {
+        LazyVim.lualine.pretty_path({
+          length = 0,
+          relative = "cwd",
+          modified_hl = "MatchParen",
+          directory_hl = "",
+          filename_hl = "Bold",
+          modified_sign = "",
+          readonly_icon = " 󰌾 ",
+        }),
+      }
+      opts.sections.lualine_z = {}
+    end,
+  },
+
+  -- zen mode
+  {
+    "folke/zen-mode.nvim",
+    cmd = "ZenMode",
+    opts = {
+      plugins = {
+        gitsigns = true,
+        tmux = true,
+        kitty = { enabled = false, font = "+2" },
+      },
+    },
+    keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
+  },
 }

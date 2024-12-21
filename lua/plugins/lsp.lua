@@ -1,12 +1,5 @@
 return {
   {
-    "olrtg/nvim-emmet",
-    config = function()
-      vim.keymap.set({ "n", "v" }, ",,", require("nvim-emmet").wrap_with_abbreviation)
-    end,
-  },
-
-  {
     "neovim/nvim-lspconfig",
     opts = {
       inlay_hints = { enabled = false },
@@ -185,15 +178,6 @@ return {
     },
     init = function()
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      keys[#keys + 1] = {
-        "gd",
-        function()
-          -- DO NOT RESUSE WINDOW
-          require("telescope.builtin").lsp_definitions({ reuse_win = false })
-        end,
-        desc = "Goto Definition",
-        has = "definition",
-      }
 
       keys[#keys + 1] = { "<leader>ca", false }
       keys[#keys + 1] =
@@ -201,16 +185,6 @@ return {
 
       keys[#keys + 1] = { "<leader>cr", false }
       keys[#keys + 1] = { "<leader>rn", vim.lsp.buf.rename, desc = "Rename", has = "rename" }
-
-      keys[#keys + 1] = {
-        "gd",
-        function()
-          -- DO NOT RESUSE WINDOW
-          require("telescope.builtin").lsp_definitions({ reuse_win = false })
-        end,
-        desc = "Goto Definition",
-        has = "definition",
-      }
     end,
   },
 }

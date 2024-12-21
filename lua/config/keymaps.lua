@@ -9,8 +9,8 @@ local opts = { noremap = true, silent = true }
 keymap.set("n", "<leader>w", "<cmd>w<cr><esc>", opts)
 
 -- buffers
-keymap.set("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
-keymap.set("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
+-- keymap.set("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+-- keymap.set("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 
 -- formatting
 keymap.set({ "n", "v" }, "<leader>F", function()
