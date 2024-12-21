@@ -33,4 +33,4 @@ keymap.set("n", "[g", diagnostic_goto(false), { desc = "Prev Diagnostic" })
 -- FZF
 keymap.set("n", "<leader>fw", ":Rg<CR>", opts)
 -- for disable double esc bug when using Rg
-keymap.del("t", "<esc><esc>")
+-- keymap.del("t", "<esc><esc>")
