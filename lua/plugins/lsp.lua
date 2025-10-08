@@ -18,6 +18,9 @@ return {
         bashls = {
           enabled = false,
         },
+        marksman = {
+          enabled = false,
+        },
         tsserver = {
           enabled = false,
         },
