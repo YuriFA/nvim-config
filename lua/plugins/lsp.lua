@@ -21,16 +21,6 @@ return {
             { "<leader>ac", vim.lsp.buf.code_action, desc = "Code Action", has = "codeAction" },
             { "<leader>cr", false },
             -- "<leader>rn", vim.lsp.buf.rename, desc = "Rename", has = "rename" }
-            {
-              "<leader>cr",
-              function()
-                local inc_rename = require("inc_rename")
-                return ":" .. inc_rename.config.cmd_name .. " " .. vim.fn.expand("<cword>")
-              end,
-              expr = true,
-              desc = "Rename (inc-rename.nvim)",
-              has = "rename",
-            },
           },
         },
 
