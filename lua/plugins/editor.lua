@@ -9,12 +9,12 @@ return {
     dependencies = { "junegunn/fzf", build = ":call fzf#install()" },
   },
 
-  {
-    "ibhagwan/fzf-lua",
-    opts = function(_, opts)
-      opts["defaults"]["header"] = false
-    end,
-  },
+  -- {
+  --   "ibhagwan/fzf-lua",
+  --   opts = function(_, opts)
+  --     opts["defaults"]["header"] = false
+  --   end,
+  -- },
 
   -- {
   --   "nvim-neo-tree/neo-tree.nvim",
