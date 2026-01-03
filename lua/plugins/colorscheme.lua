@@ -1,8 +1,6 @@
 return {
-  { "Mofiqul/vscode.nvim" }, -- vscode
-  -- { "rebelot/kanagawa.nvim" },
+  { "Mofiqul/vscode.nvim" },
 
-  -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
