@@ -3,6 +3,7 @@
 -- Add any additional options here
 
 vim.g.autoformat = false
+vim.g.lazyvim_eslint_auto_format = true
 
 -- Old Emmet
 -- vim.g.emmet_debug = 0
@@ -13,12 +14,4 @@ local opt = vim.opt
 
 opt.wrap = true -- Disable line wrap
 
--- FOR git-conflict
-vim.api.nvim_set_hl(0, "DiffText", {
-  fg = "#ffffff",
-  bg = "#1d3b40",
-})
-vim.api.nvim_set_hl(0, "DiffAdd", {
-  fg = "#ffffff",
-  bg = "#1d3450",
-})
+vim.g.lazyvim_prettier_needs_config = true
