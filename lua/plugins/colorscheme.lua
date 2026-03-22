@@ -1,9 +1,9 @@
 return {
   { "Mofiqul/vscode.nvim" }, -- vscode
-  -- { "rebelot/kanagawa.nvim" },
-  -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
-  -- Configure LazyVim to load gruvbox
+  { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
+  { "jacoborus/tender.vim", name = "tender", lazy = false, priority = 1000 },
+
   {
     "LazyVim/LazyVim",
     opts = {
