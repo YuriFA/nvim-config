@@ -16,6 +16,18 @@ local biome_supported = {
   -- "yaml",
 }
 
+local oxc_supported = {
+  "javascript",
+  "javascriptreact",
+  "typescript",
+  "typescriptreact",
+  "json",
+  "jsonc",
+  "vue",
+  "svelte",
+  "astro",
+}
+
 -- local fixjson_supported = {
 --   "json",
 --   "jsonc",
@@ -32,12 +44,15 @@ return {
         table.insert(opts.formatters_by_ft[ft], "biome-check")
       end
 
-      -- for _, ft in ipairs(fixjson_supported) do
-      --   opts.formatters_by_ft[ft] = opts.formatters_by_ft[ft] or {}
-      --   table.insert(opts.formatters_by_ft[ft], "gojq")
-      -- end
+      for _, ft in ipairs(oxc_supported) do
+        opts.formatters_by_ft[ft] = opts.formatters_by_ft[ft] or {}
+        table.insert(opts.formatters_by_ft[ft], "oxfmt")
+      end
 
       opts.formatters = opts.formatters or {}
+      opts.formatters["oxfmt"] = {
+        require_cwd = true,
+      }
       opts.formatters["biome-check"] = {
         require_cwd = true,
       }
